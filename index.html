@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mehr Family on Captiva · July 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand: #f4ead7;
+    --sand-deep: #e8d9b8;
+    --paper: #fbf6ea;
+    --ink: #1f2a30;
+    --ink-soft: #3d4f57;
+    --gulf: #1f6577;
+    --gulf-deep: #134653;
+    --gulf-light: #5a9aa8;
+    --coral: #d96b4a;
+    --coral-soft: #e89274;
+    --sunset: #e8a76f;
+    --shell: #f0d6c4;
+    --palm: #5a7a4a;
+    --line: rgba(31, 42, 48, 0.12);
+    --shadow: 0 1px 2px rgba(31, 42, 48, 0.04), 0 8px 24px rgba(31, 42, 48, 0.06);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter Tight', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse at top, rgba(232, 167, 111, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(31, 101, 119, 0.06), transparent 50%);
+    min-height: 100vh;
+  }
+
+  .grain {
+    position: fixed; inset: 0; pointer-events: none; z-index: 1;
+    opacity: 0.35;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.16 0 0 0 0 0.19 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: multiply;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    padding: 4rem 0 3rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .hero-meta {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gulf);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+
+  .hero-meta span {
+    margin: 0 0.5rem;
+    opacity: 0.4;
+  }
+
+  h1.title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+
+  h1.title em {
+    font-style: italic;
+    color: var(--coral);
+    font-weight: 300;
+  }
+
+  .hero-sub {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    font-weight: 300;
+    max-width: 36rem;
+    margin: 0 auto 2rem;
+  }
+
+  .anniversary-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 1.1rem;
+    border: 1px solid var(--coral);
+    border-radius: 999px;
+    background: rgba(217, 107, 74, 0.06);
+    color: var(--coral);
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .anniversary-badge svg { width: 14px; height: 14px; }
+
+  .divider-shell {
+    margin: 3rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--gulf);
+  }
+
+  .divider-shell .line {
+    flex: 1; max-width: 80px; height: 1px;
+    background: linear-gradient(to right, transparent, var(--gulf), transparent);
+  }
+
+  /* ============ CREW SECTION ============ */
+  .section-label {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gulf);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 2rem;
+    letter-spacing: -0.01em;
+    margin-bottom: 2rem;
+    color: var(--ink);
+  }
+
+  .crew {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .crew-group {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 1.8rem;
+    backdrop-filter: blur(8px);
+    position: relative;
+  }
+
+  .crew-group h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    color: var(--gulf-deep);
+  }
+
+  .crew-from {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+  }
+
+  .crew-members {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .crew-tag {
+    padding: 0.35rem 0.8rem;
+    background: var(--sand);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .crew-tag.elder {
+    background: var(--coral);
+    color: white;
+  }
+
+  /* ============ DAYS ============ */
+  .days-section { margin-bottom: 4rem; }
+
+  .day {
+    margin-bottom: 1.5rem;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .day:hover { box-shadow: var(--shadow); }
+
+  .day-header {
+    padding: 1.5rem 1.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    user-select: none;
+    transition: background 0.2s;
+  }
+
+  .day-header:hover { background: rgba(244, 234, 215, 0.5); }
+
+  .day-num {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: 2.6rem;
+    line-height: 1;
+    color: var(--coral);
+    min-width: 3.2rem;
+    text-align: center;
+    font-feature-settings: "lnum";
+  }
+
+  .day-num small {
+    display: block;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    color: var(--gulf);
+    margin-top: 0.3rem;
+    text-transform: uppercase;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 500;
+  }
+
+  .day-title-block { flex: 1; }
+
+  .day-date {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gulf);
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+  }
+
+  .day-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.35rem;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  .day-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gulf);
+  }
+
+  .day-progress {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+  }
+
+  .progress-ring {
+    width: 36px;
+    height: 36px;
+    position: relative;
+  }
+
+  .progress-ring svg {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+  }
+
+  .progress-ring circle {
+    fill: none;
+    stroke-width: 2.5;
+  }
+
+  .progress-ring .bg { stroke: var(--line); }
+  .progress-ring .fg {
+    stroke: var(--coral);
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease;
+  }
+
+  .progress-count {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+  }
+
+  .chevron {
+    width: 14px; height: 14px;
+    transition: transform 0.3s;
+    color: var(--ink-soft);
+  }
+
+  .day.open .chevron { transform: rotate(180deg); }
+
+  .day-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+
+  .day.open .day-body { max-height: 5000px; }
+
+  .day-inner {
+    padding: 0 1.8rem 2rem;
+    border-top: 1px solid var(--line);
+    padding-top: 1.5rem;
+    margin-top: 0;
+  }
+
+  .day-story {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin-bottom: 1.8rem;
+    max-width: 50rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--coral);
+  }
+
+  .schedule {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .item {
+    display: flex;
+    gap: 1rem;
+    padding: 0.9rem 1rem;
+    background: var(--paper);
+    border-radius: 4px;
+    border: 1px solid var(--line);
+    transition: all 0.2s;
+    cursor: pointer;
+    align-items: flex-start;
+  }
+
+  .item:hover {
+    border-color: var(--gulf-light);
+    background: rgba(244, 234, 215, 0.6);
+  }
+
+  .item.done {
+    background: rgba(90, 122, 74, 0.08);
+    border-color: rgba(90, 122, 74, 0.3);
+  }
+
+  .item.done .item-title,
+  .item.done .item-desc {
+    text-decoration: line-through;
+    opacity: 0.55;
+  }
+
+  .check {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border: 1.5px solid var(--gulf);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    margin-top: 2px;
+  }
+
+  .item.done .check {
+    background: var(--palm);
+    border-color: var(--palm);
+  }
+
+  .check svg {
+    width: 12px; height: 12px;
+    stroke: white;
+    stroke-width: 3;
+    fill: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .item.done .check svg { opacity: 1; }
+
+  .item-time {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gulf);
+    min-width: 5rem;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  .item-body { flex: 1; }
+
+  .item-title {
+    font-weight: 500;
+    font-size: 0.98rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .item-desc {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  .item-tag {
+    display: inline-block;
+    padding: 0.15rem 0.55rem;
+    background: var(--shell);
+    color: var(--coral);
+    border-radius: 999px;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+
+  /* ============ NOTES ============ */
+  .notes-section {
+    background: linear-gradient(135deg, var(--gulf-deep), var(--gulf));
+    color: var(--sand);
+    padding: 3rem 2.5rem;
+    border-radius: 4px;
+    margin-bottom: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .notes-section::before {
+    content: '';
+    position: absolute;
+    top: -50px; right: -50px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(232, 167, 111, 0.15), transparent 70%);
+  }
+
+  .notes-section h2 {
+    color: var(--sand);
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .notes-section h2 em { font-style: italic; color: var(--sunset); }
+
+  .notes-sub {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: rgba(244, 234, 215, 0.75);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .notes textarea {
+    width: 100%;
+    min-height: 150px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(244, 234, 215, 0.25);
+    border-radius: 4px;
+    padding: 1rem;
+    color: var(--sand);
+    font-family: 'Fraunces', serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .notes textarea::placeholder {
+    color: rgba(244, 234, 215, 0.4);
+    font-style: italic;
+  }
+
+  .notes textarea:focus {
+    border-color: var(--sunset);
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .save-status {
+    margin-top: 0.6rem;
+    font-size: 0.75rem;
+    color: rgba(244, 234, 215, 0.6);
+    font-style: italic;
+    min-height: 1rem;
+  }
+
+  /* ============ TRIP OVERVIEW ============ */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 4rem;
+  }
+
+  .stat {
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 1.4rem 1.2rem;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 2.2rem;
+    line-height: 1;
+    color: var(--coral);
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gulf);
+    font-weight: 500;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    text-align: center;
+    padding: 3rem 0 4rem;
+    color: var(--ink-soft);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    border-top: 1px solid var(--line);
+    margin-top: 2rem;
+  }
+
+  footer .heart { color: var(--coral); }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 720px) {
+    .container { padding: 0 1.2rem; }
+    .crew { grid-template-columns: 1fr; gap: 1rem; }
+    .overview-grid { grid-template-columns: repeat(2, 1fr); }
+    .day-header { padding: 1.2rem; gap: 1rem; }
+    .day-num { font-size: 2rem; min-width: 2.5rem; }
+    .day-inner { padding: 1.2rem; }
+    .item { flex-wrap: wrap; }
+    .item-time { min-width: auto; width: 100%; margin-bottom: 0.2rem; }
+    .notes-section { padding: 2rem 1.5rem; }
+  }
+
+  .reset-btn {
+    background: none;
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .reset-btn:hover { border-color: var(--coral); color: var(--coral); }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<div class="container">
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="hero-meta">
+      Captiva Island, Florida <span>·</span> July 10–17, 2027
+    </div>
+
+    <h1 class="title">The Mehr Family<br><em>on Captiva</em></h1>
+
+    <p class="hero-sub">Seven days of sand, shells, and sunsets — a Gulf-coast gathering<br>to honor fifty years of Doug &amp; Deb.</p>
+
+    <div class="anniversary-badge">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      Doug &amp; Deb's 50th Anniversary
+    </div>
+  </header>
+
+  <div class="divider-shell">
+    <div class="line"></div>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+      <path d="M12 2c-3 4-5 8-5 12 0 4 2 7 5 8 3-1 5-4 5-8 0-4-2-8-5-12z"/>
+      <path d="M12 4v18M9 8c1 1 2 3 3 6M15 8c-1 1-2 3-3 6"/>
+    </svg>
+    <div class="line"></div>
+  </div>
+
+  <!-- ============ TRIP OVERVIEW ============ -->
+  <div class="overview-grid">
+    <div class="stat"><div class="stat-num">9</div><div class="stat-label">Mehrs</div></div>
+    <div class="stat"><div class="stat-num">7</div><div class="stat-label">Days</div></div>
+    <div class="stat"><div class="stat-num">50</div><div class="stat-label">Years</div></div>
+    <div class="stat"><div class="stat-num">1</div><div class="stat-label">Beach House</div></div>
+  </div>
+
+  <!-- ============ CREW ============ -->
+  <div>
+    <div class="section-label">The Crew</div>
+    <h2 class="section-title">Everyone under one roof.</h2>
+
+    <div class="crew">
+      <div class="crew-group">
+        <h3>The Guests of Honor</h3>
+        <p class="crew-from">Married July 1977</p>
+        <div class="crew-members">
+          <span class="crew-tag elder">Doug</span>
+          <span class="crew-tag elder">Deb</span>
+        </div>
+      </div>
+
+      <div class="crew-group">
+        <h3>The Colorado Mehrs</h3>
+        <p class="crew-from">Flying in from Evergreen, CO</p>
+        <div class="crew-members">
+          <span class="crew-tag">Brent</span>
+          <span class="crew-tag">Kate</span>
+          <span class="crew-tag">Declan · 11</span>
+        </div>
+      </div>
+
+      <div class="crew-group" style="grid-column: span 2;">
+        <h3>The Florida Mehrs</h3>
+        <p class="crew-from">Driving down from Ocala</p>
+        <div class="crew-members">
+          <span class="crew-tag">Anne</span>
+          <span class="crew-tag">Cullen · 10</span>
+          <span class="crew-tag">Keely · 12</span>
+          <span class="crew-tag">Findley · 14</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ DAYS ============ -->
+  <div class="days-section">
+    <div class="section-label">The Itinerary</div>
+    <h2 class="section-title">Seven days, slowly.</h2>
+
+    <div id="days"></div>
+  </div>
+
+  <!-- ============ NOTES ============ -->
+  <div class="notes-section">
+    <h2>Family <em>Notebook</em></h2>
+    <p class="notes-sub">Memories, photos to print, restaurant favorites, who caught the biggest shell — write it down.</p>
+    <div class="notes">
+      <textarea id="notes" placeholder="Day 1: Findley shot the porch photo. Cullen and Declan were in the water within ten minutes. Keely found a perfect lightning whelk at Turner Beach..."></textarea>
+      <div class="save-status" id="save-status"></div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-bottom: 3rem;">
+    <button class="reset-btn" id="reset-btn">Reset all check-marks</button>
+  </div>
+
+  <footer>
+    Here's to fifty more <span class="heart">♥</span><br>
+    Made with love for the Mehr family · July 2027
+  </footer>
+
+</div>
+
+<script>
+  // ============ ITINERARY DATA ============
+  const itinerary = [
+    {
+      num: 1,
+      date: "Saturday, July 10",
+      title: "Arrival Day — <em>Settling in</em>",
+      story: "Two arrivals, one driveway. The Florida Mehrs pull up first with a cooler of essentials; the Colorado crew lands in Fort Myers and rolls in by late afternoon. First toes in the sand before dark.",
+      items: [
+        { time: "12:00 PM", title: "Florida Mehrs arrive at Flamingo Beach", desc: "Anne, Cullen, Keely & Findley pull in from Ocala. Cousins claim bedrooms, do the grocery run, scout the beach." },
+        { time: "4:30 PM", title: "Colorado crew lands at RSW", desc: "Brent, Kate & Declan — pick up rental car. ~1 hour drive to Captiva via the Sanibel Causeway." },
+        { time: "6:00 PM", title: "Family hug at the house", desc: "Everyone together. Big porch photo — this becomes Day 1 of the trip album. Findley on photographer duty." },
+        { time: "7:00 PM", title: "Easy first-night dinner at the house", desc: "Pre-stocked groceries, grill on the deck. No restaurant on arrival night — just feet up, four cousins reuniting, the adults catching up." },
+        { time: "9:00 PM", title: "Sunset walk on the beach", desc: "Quick barefoot stroll. Kids stay out as late as they want — first night of vacation rules.", tag: "Tradition" }
+      ]
+    },
+    {
+      num: 2,
+      date: "Sunday, July 11",
+      title: "Beach Day &amp; Bike the Island",
+      story: "No agenda. Cousins on the beach all morning, lunch in the village by bike, then a long lazy afternoon. The grandparents claim their favorite chairs early.",
+      items: [
+        { time: "8:00 AM", title: "Coffee on the deck", desc: "Doug & Deb get the first quiet hour. Pelican flyover usually starts around now." },
+        { time: "9:30 AM", title: "Beach morning — Captiva Beach", desc: "Boogie boards, football, paddleball. Cullen and Declan will be in the water for three hours straight. Sunscreen and reapply, reapply, reapply." },
+        { time: "12:30 PM", title: "Bike to lunch at RC Otter's", desc: "Rent cruisers from YOLO or Billy's Rentals for the week — the whole island is bikeable. Cousins ride together. Order the conch fritters.", tag: "Bikes" },
+        { time: "2:30 PM", title: "Pool / porch / quiet hours", desc: "Heat peaks now. Adults nap. Kids get screen time or a card-game tournament on the porch." },
+        { time: "5:00 PM", title: "Shelling at Turner Beach", desc: "The best shelling on the island — kids compete for the best whelks, conch, and sand dollars. Bring buckets.", tag: "Activity" },
+        { time: "7:00 PM", title: "Sunset dinner at The Mucky Duck", desc: "Toes-in-sand picnic tables, the island's classic sunset spot. Get there 90 min early — they don't take reservations." }
+      ]
+    },
+    {
+      num: 3,
+      date: "Monday, July 12",
+      title: "Dolphin Cruise &amp; <em>Cabbage Key</em>",
+      story: "The big group adventure — Captiva Cruises out to Cabbage Key, wild dolphins along the way, lunch at the legendary dollar-bill restaurant. Every cousin tapes up a bill of their own.",
+      items: [
+        { time: "8:30 AM", title: "Breakfast at the house", desc: "Eat well — it's an active day. Pack reef-safe sunscreen, hats, light layer for the boat, $1 bills for the wall." },
+        { time: "10:00 AM", title: "Board Captiva Cruises at McCarthy's Marina", desc: "Lunch cruise to Cabbage Key. ~45-min ride out — captain calls out dolphins, the kids will be at the rail the whole way." },
+        { time: "12:00 PM", title: "Cabbage Key Inn — the dollar-bill lunch", desc: "Cheeseburger in paradise, key lime pie. Walls and ceiling covered in $70k+ of taped bills. Every kid signs and tapes one — find it on the next trip.", tag: "Bucket List" },
+        { time: "1:30 PM", title: "Explore the island", desc: "Short nature trail, water tower views, gopher tortoises. The cousins will scatter and find things." },
+        { time: "3:30 PM", title: "Cruise back to Captiva", desc: "Quieter ride home. Sunburned and content." },
+        { time: "7:00 PM", title: "Pizza night at home", desc: "Order in. Backyard movie projected on a sheet, or a four-cousin card-game tournament. Low-key after a big day." }
+      ]
+    },
+    {
+      num: 4,
+      date: "Tuesday, July 13",
+      title: "Water Day — <em>Kayaks &amp; WaveRunners</em>",
+      story: "All-in water day. Younger crew does a guided kayak/SUP tour through the mangroves; the older kids and adults who want adrenaline take a WaveRunner tour. Everyone meets back for lunch.",
+      items: [
+        { time: "9:00 AM", title: "Guided kayak / SUP — Adventure Sea Kayak", desc: "Calm mangrove tunnels off Buck Key. Manatees and rays common. Great for Declan, Cullen, Keely — Doug & Deb if they're game.", tag: "Younger crew" },
+        { time: "9:30 AM", title: "WaveRunner tour — Captiva Watersports", desc: "Guided 2-hour tour around Pine Island Sound. Findley (14) can ride passenger with a parent; the adults swap drivers. Books up — reserve now.", tag: "Findley + adults" },
+        { time: "1:00 PM", title: "Family reunites for lunch — Keylime Bistro", desc: "Heart of Captiva Village. Walking distance from the house. Coconut shrimp, fish tacos, frozen drinks." },
+        { time: "3:00 PM", title: "Bailey-Matthews National Shell Museum", desc: "Short drive to Sanibel. Way more interesting than it sounds — live tank, deep-sea exhibits, a hit with this age range. Worth the AC alone.", tag: "Indoor / AC" },
+        { time: "7:00 PM", title: "Cookout at the house", desc: "Grill night. Doug on burger duty (tradition). Cornhole tournament — cousins vs. parents. Stakes: dishes." }
+      ]
+    },
+    {
+      num: 5,
+      date: "Wednesday, July 14",
+      title: "Anniversary Day — <em>The Main Event</em>",
+      story: "Today is the day. Slow morning, a big family photo session at golden hour, the anniversary dinner at Crow's Nest, and a 50-year toast on the beach. The cousins lead the toast.",
+      items: [
+        { time: "9:00 AM", title: "Anniversary breakfast at the house", desc: "Mimosas for the adults, pancakes for the kids. Four cousins work on a hand-made memory book for Doug & Deb — each grandkid does a page." },
+        { time: "11:00 AM", title: "Beach morning, parents-on-duty", desc: "Doug & Deb get a few hours to themselves. Long walk, coffee, swim — whatever they want. Kids stay in the pool." },
+        { time: "2:00 PM", title: "Spa hour for Deb (and anyone who wants)", desc: "'Tween Waters Spa or an in-home massage. Book this 8+ weeks ahead — July fills up." },
+        { time: "4:00 PM", title: "Family photo session on the beach", desc: "Hire a local photographer for 1 hour at golden-light. Coordinated colors — white/khaki/light blue. Group, couple, just-the-grandkids. This is THE photo.", tag: "Plan ahead" },
+        { time: "6:30 PM", title: "Anniversary dinner — Crow's Nest Steakhouse", desc: "180° Gulf views, the only second-floor restaurant on the island. Reservations essential — book 3+ months out. Cake at the table.", tag: "The Big One" },
+        { time: "9:00 PM", title: "50-year toast on the beach", desc: "Champagne in plastic flutes, sparkling cider for the cousins. The grandkids present the memory book. Each kid says one thing. So do you.", tag: "Tradition" }
+      ]
+    },
+    {
+      num: 6,
+      date: "Thursday, July 15",
+      title: "Cayo Costa Day Trip",
+      story: "The biggest, emptiest, wildest beach in southwest Florida — accessible only by boat. World-class shelling, no crowds, no buildings. Pack a serious picnic and stay all day.",
+      items: [
+        { time: "8:00 AM", title: "Pack the day-trip cooler", desc: "Sandwiches, fruit, lots of water, sunscreen, hats, shell bags, towels. There are no shops on Cayo Costa." },
+        { time: "9:30 AM", title: "Captiva Cruises to Cayo Costa", desc: "~45-min boat ride. Tractor-pulled tram drops you at the Gulf-side beach. State park — pristine." },
+        { time: "11:00 AM", title: "Shell hunt, swim, picnic", desc: "Best shelling in the U.S. The cousins will fill bags. Adults will read in the shade.", tag: "Bucket List" },
+        { time: "2:30 PM", title: "Last swim, tram back to the dock", desc: "Don't miss the return tram — there's only one boat back." },
+        { time: "3:30 PM", title: "Boat back to Captiva", desc: "Tired, salty, happy. Naps in the car." },
+        { time: "5:30 PM", title: "Pool & quiet evening", desc: "Sort the shell haul on the porch. Adults pour something cold." },
+        { time: "7:30 PM", title: "Dinner at The Bubble Room", desc: "Captiva legend — wild decor, model trains running through the dining room, cake slices the size of your head. The cousins will love it.", tag: "Iconic" }
+      ]
+    },
+    {
+      num: 7,
+      date: "Friday, July 16",
+      title: "Parasail &amp; <em>Captiva Classics</em>",
+      story: "Last full day. Parasailing in the morning for whoever's brave, classic Captiva moves the rest of the day — beach, ice cream, sunset, one more island dinner.",
+      items: [
+        { time: "7:30 AM", title: "Sunrise walk (bay side)", desc: "Whoever's up. Short walk on the bay side. Coffee in hand. Findley usually sleeps through this." },
+        { time: "9:30 AM", title: "Parasailing — YOLO Watersports", desc: "Tandem or triple flights, 600-800 ft up. Cousins can fly with a parent. Spectacular views of the whole island. Book day-one of the trip.", tag: "Optional" },
+        { time: "12:30 PM", title: "Lunch at The Green Flash", desc: "Waterfront, Pine Island Sound views. Adults grab a frozen drink. The view is the meal." },
+        { time: "2:30 PM", title: "Last beach afternoon", desc: "Everyone on the sand. Football, paddleball, last swim. Group photo while everyone's still tan." },
+        { time: "4:30 PM", title: "Ice cream at Scoops & Slices", desc: "Mandatory. The kids pick. Cones on the porch back at the house." },
+        { time: "5:30 PM", title: "Final sunset — Captiva Beach", desc: "Bring the chairs, bring a small speaker, bring nothing. Final green-flash chance. Stay until it's dark.", tag: "Tradition" },
+        { time: "7:30 PM", title: "Last dinner + pack", desc: "Easy at home — clear out the fridge. Florida crew loads the car tonight; Colorado packs and leaves bags by the door." }
+      ]
+    },
+    {
+      num: 8,
+      date: "Saturday, July 17",
+      title: "Departure",
+      story: "Hugs on the porch, one more lap of the house for forgotten chargers, and the long quiet drive home. The trip ends. The memory does not.",
+      items: [
+        { time: "8:00 AM", title: "Last coffee on the deck", desc: "Everyone in one spot one last time. Re-shoot the porch photo from Day 1 — same spots, same people, seven days later." },
+        { time: "9:30 AM", title: "Florida Mehrs head north", desc: "~3 hour drive back to Ocala. Snacks for the back seat. Audiobook queued." },
+        { time: "10:30 AM", title: "Colorado Mehrs to RSW", desc: "Return rental, flight home to Denver. Reach Evergreen by evening." },
+        { time: "11:00 AM", title: "Check-out — close up Flamingo Beach", desc: "Trash out, dishwasher running, AC to 78°. Leave a thank-you note. Lock up. Drive away slow." }
+      ]
+    }
+  ];
+
+  // ============ STORAGE HELPERS ============
+  const STORAGE = window.storage;
+  const FALLBACK_PREFIX = "mehr_captiva_";
+
+  async function loadKey(key) {
+    try {
+      if (STORAGE && STORAGE.get) {
+        const r = await STORAGE.get(key);
+        return r ? r.value : null;
+      }
+    } catch (e) { /* fall through */ }
+    try { return localStorage.getItem(FALLBACK_PREFIX + key); } catch (e) { return null; }
+  }
+
+  async function saveKey(key, value) {
+    try {
+      if (STORAGE && STORAGE.set) {
+        await STORAGE.set(key, value);
+        return true;
+      }
+    } catch (e) { /* fall through */ }
+    try { localStorage.setItem(FALLBACK_PREFIX + key, value); return true; } catch (e) { return false; }
+  }
+
+  async function deleteKey(key) {
+    try {
+      if (STORAGE && STORAGE.delete) await STORAGE.delete(key);
+    } catch (e) {}
+    try { localStorage.removeItem(FALLBACK_PREFIX + key); } catch (e) {}
+  }
+
+  // ============ RENDER ============
+  const checked = {};
+
+  async function init() {
+    // Load checked state
+    const saved = await loadKey("checked");
+    if (saved) {
+      try { Object.assign(checked, JSON.parse(saved)); } catch (e) {}
+    }
+
+    // Load notes
+    const notes = await loadKey("notes");
+    if (notes) document.getElementById("notes").value = notes;
+
+    renderDays();
+    bindNotes();
+    bindReset();
+  }
+
+  function renderDays() {
+    const root = document.getElementById("days");
+    root.innerHTML = itinerary.map((d, idx) => {
+      const itemsHtml = d.items.map((it, i) => {
+        const key = `d${d.num}_i${i}`;
+        const isDone = !!checked[key];
+        const tag = it.tag ? `<span class="item-tag">${it.tag}</span>` : "";
+        return `
+          <div class="item ${isDone ? 'done' : ''}" data-key="${key}">
+            <div class="check">
+              <svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg>
+            </div>
+            <div class="item-time">${it.time}</div>
+            <div class="item-body">
+              <div class="item-title">${it.title}${tag}</div>
+              <div class="item-desc">${it.desc}</div>
+            </div>
+          </div>`;
+      }).join("");
+
+      const total = d.items.length;
+      const done = d.items.filter((_, i) => checked[`d${d.num}_i${i}`]).length;
+      const pct = total ? done / total : 0;
+      const circ = 2 * Math.PI * 15;
+      const offset = circ * (1 - pct);
+
+      return `
+        <div class="day ${idx === 0 ? 'open' : ''}" data-day="${d.num}">
+          <div class="day-header">
+            <div class="day-num">${d.num}<small>Day</small></div>
+            <div class="day-title-block">
+              <div class="day-date">${d.date}</div>
+              <div class="day-title">${d.title}</div>
+            </div>
+            <div class="day-progress">
+              <div class="progress-ring">
+                <svg viewBox="0 0 36 36">
+                  <circle class="bg" cx="18" cy="18" r="15"/>
+                  <circle class="fg" cx="18" cy="18" r="15"
+                          stroke-dasharray="${circ}"
+                          stroke-dashoffset="${offset}"/>
+                </svg>
+                <div class="progress-count">${done}/${total}</div>
+              </div>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </div>
+          </div>
+          <div class="day-body">
+            <div class="day-inner">
+              <div class="day-story">${d.story}</div>
+              <div class="schedule">${itemsHtml}</div>
+            </div>
+          </div>
+        </div>`;
+    }).join("");
+
+    // Bind day toggle
+    root.querySelectorAll(".day-header").forEach(h => {
+      h.addEventListener("click", () => {
+        h.parentElement.classList.toggle("open");
+      });
+    });
+
+    // Bind item checks
+    root.querySelectorAll(".item").forEach(item => {
+      item.addEventListener("click", async () => {
+        const key = item.dataset.key;
+        checked[key] = !checked[key];
+        item.classList.toggle("done", checked[key]);
+        await saveKey("checked", JSON.stringify(checked));
+        updateProgressForKey(key);
+      });
+    });
+  }
+
+  function updateProgressForKey(key) {
+    // key is "dN_iM"
+    const dayNum = parseInt(key.split("_")[0].slice(1));
+    const day = itinerary.find(d => d.num === dayNum);
+    if (!day) return;
+    const total = day.items.length;
+    const done = day.items.filter((_, i) => checked[`d${dayNum}_i${i}`]).length;
+    const pct = total ? done / total : 0;
+    const circ = 2 * Math.PI * 15;
+    const offset = circ * (1 - pct);
+
+    const dayEl = document.querySelector(`.day[data-day="${dayNum}"]`);
+    if (!dayEl) return;
+    const fg = dayEl.querySelector(".progress-ring .fg");
+    const counter = dayEl.querySelector(".progress-count");
+    if (fg) fg.setAttribute("stroke-dashoffset", offset);
+    if (counter) counter.textContent = `${done}/${total}`;
+  }
+
+  function bindNotes() {
+    const ta = document.getElementById("notes");
+    const status = document.getElementById("save-status");
+    let timer = null;
+    ta.addEventListener("input", () => {
+      status.textContent = "Saving…";
+      clearTimeout(timer);
+      timer = setTimeout(async () => {
+        await saveKey("notes", ta.value);
+        const time = new Date().toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+        status.textContent = `Saved at ${time}`;
+      }, 600);
+    });
+  }
+
+  function bindReset() {
+    document.getElementById("reset-btn").addEventListener("click", async () => {
+      if (!confirm("Clear all check-marks? (Your notes will be kept.)")) return;
+      for (const k of Object.keys(checked)) delete checked[k];
+      await deleteKey("checked");
+      renderDays();
+    });
+  }
+
+  init();
+</script>
+</body>
+</html>
