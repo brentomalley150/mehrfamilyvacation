@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mehr Family on Captiva · July 2027</title>
+<title>Mehr Family Vacation · 2027</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -1219,6 +1219,157 @@
   .shop-btn.primary:hover { background: var(--gulf); border-color: var(--gulf); color: var(--paper); }
 
 
+  /* ============ VOTE BOARD ============ */
+  .vote-board {
+    background: var(--paper);
+    border: 2px solid var(--sand-deep);
+    border-radius: 1.2rem;
+    padding: 2rem 2.5rem;
+    margin-top: 2.5rem;
+  }
+  .vote-board-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    color: var(--ink);
+    margin: 0 0 0.3rem;
+    text-align: center;
+  }
+  .vote-board-intro {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    margin: 0 0 1.5rem;
+    text-align: center;
+  }
+  .voter-select {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  .voter-btn {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    padding: 0.55rem 1.25rem;
+    border: 2px solid var(--gulf-light);
+    border-radius: 2rem;
+    background: white;
+    color: var(--gulf);
+    cursor: pointer;
+    transition: all 0.18s;
+  }
+  .voter-btn:hover { background: var(--sand); }
+  .voter-btn.active-voter {
+    background: var(--gulf);
+    border-color: var(--gulf);
+    color: white;
+  }
+  .cast-vote { margin-bottom: 2rem; }
+  .cast-vote-prompt {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--ink-soft);
+    margin: 0 0 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-align: center;
+  }
+  .cast-vote-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .cast-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    padding: 1rem 1.6rem;
+    border: 2px solid var(--sand-deep);
+    border-radius: 1rem;
+    background: white;
+    cursor: pointer;
+    transition: all 0.18s;
+    min-width: 140px;
+  }
+  .cast-btn:hover { border-color: var(--coral); }
+  .cast-btn.voted {
+    border-color: var(--coral);
+    background: var(--coral);
+    color: white;
+  }
+  .cast-btn-num {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .cast-btn-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+  .cast-btn-loc {
+    font-size: 0.72rem;
+    opacity: 0.7;
+  }
+  .vote-tally {
+    border-top: 1px solid var(--sand-deep);
+    padding-top: 1.1rem;
+  }
+  .tally-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.55rem 0.75rem;
+    border-radius: 0.5rem;
+    transition: background 0.15s;
+  }
+  .tally-row.active-row { background: var(--sand); }
+  .tally-name {
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 0.95rem;
+  }
+  .tally-pick { font-size: 0.85rem; }
+  .tally-pick.tally-none { color: var(--gulf-light); font-style: italic; }
+  .tally-pick.tally-opt1 { color: var(--gulf-deep); font-weight: 700; }
+  .tally-pick.tally-opt2 { color: var(--coral); font-weight: 700; }
+
+
+  /* ============ OPTION ACTIVITIES ============ */
+  .option-activities {
+    margin: 1.1rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--sand-deep);
+  }
+  .option-act-title {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 0.6rem;
+  }
+  .option-act-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .option-act-list li {
+    font-size: 0.87rem;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+  .option-act-list li strong {
+    color: var(--ink);
+    font-weight: 700;
+  }
+
   @media (max-width: 720px) {
     .container { padding: 0 1.2rem; }
     .crew { grid-template-columns: 1fr; gap: 1rem; }
@@ -1273,6 +1424,495 @@
     transition: all 0.2s;
   }
   .reset-btn:hover { border-color: var(--coral); color: var(--coral); }
+
+  /* ============ VACATION OPTIONS ============ */
+  .options-section { margin-bottom: 4rem; }
+
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .option-card {
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .option-card:hover {
+    box-shadow: var(--shadow);
+    transform: translateY(-2px);
+  }
+
+  .option-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 210px;
+    overflow: hidden;
+    background: var(--sand);
+  }
+
+  .option-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .option-card:hover .option-img { transform: scale(1.04); }
+
+  .option-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 35%, rgba(19, 70, 83, 0.88) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.2rem 1.5rem;
+  }
+
+  .option-num {
+    position: absolute;
+    top: 1rem;
+    left: 1.2rem;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--paper);
+    background: rgba(19, 70, 83, 0.7);
+    backdrop-filter: blur(6px);
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .option-dates-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--paper);
+    background: rgba(217, 107, 74, 0.75);
+    backdrop-filter: blur(6px);
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .option-location {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(244, 234, 215, 0.85);
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+  }
+
+  .option-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--paper);
+    line-height: 1.1;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+  }
+
+  .option-body { padding: 1.4rem 1.6rem 1.6rem; }
+
+  .option-tagline {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 1.3rem;
+    padding-left: 0.9rem;
+    border-left: 2px solid var(--coral);
+  }
+
+  .option-stats {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.3rem;
+    flex-wrap: wrap;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .option-stat { text-align: center; }
+
+  .option-stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 1.7rem;
+    font-weight: 300;
+    color: var(--coral);
+    line-height: 1;
+  }
+
+  .option-stat-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gulf);
+    font-weight: 500;
+    margin-top: 0.25rem;
+  }
+
+  .option-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .option-highlight {
+    font-size: 0.73rem;
+    padding: 0.3rem 0.75rem;
+    background: var(--shell);
+    color: var(--coral);
+    border-radius: 4px;
+    font-weight: 500;
+    border: 1px solid rgba(217, 107, 74, 0.15);
+  }
+
+  .option-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .option-link {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--gulf);
+    text-decoration: none;
+    border: 1px solid var(--gulf);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+
+  .option-link:hover { background: var(--gulf); color: var(--paper); }
+
+  .vote-area {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .vote-btn {
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.45rem 1rem;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .vote-btn:hover {
+    border-color: var(--coral);
+    color: var(--coral);
+    background: rgba(217, 107, 74, 0.06);
+  }
+
+  .vote-btn.voted {
+    border-color: var(--coral);
+    background: var(--coral);
+    color: white;
+  }
+
+  .vote-count {
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    min-width: 3rem;
+  }
+
+  .options-intro {
+    background: var(--shell);
+    border: 1px solid rgba(217, 107, 74, 0.2);
+    border-left: 3px solid var(--coral);
+    border-radius: 4px;
+    padding: 1.1rem 1.4rem;
+    margin-bottom: 2rem;
+    font-family: 'Fraunces', serif;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  .options-intro strong {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 600;
+    color: var(--coral);
+    font-style: normal;
+  }
+
+  @media (max-width: 720px) {
+    .options-grid { grid-template-columns: 1fr; }
+    .option-img-wrap { height: 180px; }
+    .option-name { font-size: 1.25rem; }
+  }
+
+  /* ============ VACATION OPTIONS ============ */
+  .options-section { margin-bottom: 4rem; }
+
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .option-card {
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .option-card:hover {
+    box-shadow: var(--shadow);
+    transform: translateY(-2px);
+  }
+
+  .option-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: var(--sand);
+  }
+
+  .option-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .option-card:hover .option-img { transform: scale(1.04); }
+
+  .option-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 35%, rgba(19, 70, 83, 0.88) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.2rem 1.5rem;
+  }
+
+  .option-num {
+    position: absolute;
+    top: 1rem;
+    left: 1.2rem;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--paper);
+    background: rgba(19, 70, 83, 0.7);
+    backdrop-filter: blur(6px);
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .option-dates-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--paper);
+    background: rgba(217, 107, 74, 0.75);
+    backdrop-filter: blur(6px);
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .option-location {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(244, 234, 215, 0.85);
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+  }
+
+  .option-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: var(--paper);
+    line-height: 1.1;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+  }
+
+  .option-body { padding: 1.4rem 1.6rem 1.6rem; }
+
+  .option-tagline {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 1.3rem;
+    padding-left: 0.9rem;
+    border-left: 2px solid var(--coral);
+  }
+
+  .option-stats {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.3rem;
+    flex-wrap: wrap;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .option-stat { text-align: center; }
+
+  .option-stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 1.7rem;
+    font-weight: 300;
+    color: var(--coral);
+    line-height: 1;
+  }
+
+  .option-stat-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gulf);
+    font-weight: 500;
+    margin-top: 0.25rem;
+  }
+
+  .option-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .option-highlight {
+    font-size: 0.73rem;
+    padding: 0.3rem 0.75rem;
+    background: var(--shell);
+    color: var(--coral);
+    border-radius: 4px;
+    font-weight: 500;
+    border: 1px solid rgba(217, 107, 74, 0.15);
+  }
+
+  .option-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .option-link {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--gulf);
+    text-decoration: none;
+    border: 1px solid var(--gulf);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+
+  .option-link:hover { background: var(--gulf); color: var(--paper); }
+
+  .vote-area { display: flex; align-items: center; gap: 0.65rem; }
+
+  .vote-btn {
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.45rem 1.1rem;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .vote-btn:hover { border-color: var(--coral); color: var(--coral); background: rgba(217,107,74,0.06); }
+  .vote-btn.voted { border-color: var(--coral); background: var(--coral); color: white; }
+
+  .vote-count {
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    min-width: 3rem;
+  }
+
+  .options-intro {
+    background: var(--shell);
+    border: 1px solid rgba(217, 107, 74, 0.2);
+    border-left: 3px solid var(--coral);
+    border-radius: 4px;
+    padding: 1.1rem 1.4rem;
+    margin-bottom: 2rem;
+    font-family: 'Fraunces', serif;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  .options-intro strong {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 600;
+    color: var(--coral);
+    font-style: normal;
+  }
+
+  @media (max-width: 720px) {
+    .options-grid { grid-template-columns: 1fr; }
+    .option-img-wrap { height: 180px; }
+    .option-name { font-size: 1.3rem; }
+  }
 </style>
 </head>
 <body>
@@ -1283,27 +1923,16 @@
   <!-- ============ HERO ============ -->
   <header class="hero">
     <div class="hero-meta">
-      Captiva Island, Florida <span>·</span> July 10–17, 2027
+      Summer 2027 <span>·</span> Mehr Family Reunion
     </div>
 
-    <h1 class="title">The Mehr Family<br><em>on Captiva</em></h1>
+    <h1 class="title">The Mehr<br><em>Family Vacation</em></h1>
 
-    <p class="hero-sub">Seven days of sand, shells, and sunsets — a Gulf-coast gathering<br>to honor fifty years of Doug &amp; Deb.</p>
+    <p class="hero-sub">Sand, shells, and sunsets — a gathering to honor fifty years of Doug &amp; Deb. First things first: where are we going?</p>
 
     <div class="anniversary-badge">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
       Doug &amp; Deb's 50th Anniversary
-    </div>
-
-    <div class="countdown" id="countdown">
-      <div class="countdown-label" id="cd-label">The trip begins in</div>
-      <div class="countdown-units">
-        <div class="cd-unit"><div class="cd-number" id="cd-days">—</div><div class="cd-label">Days</div></div>
-        <div class="cd-unit"><div class="cd-number" id="cd-hours">—</div><div class="cd-label">Hours</div></div>
-        <div class="cd-unit"><div class="cd-number" id="cd-minutes">—</div><div class="cd-label">Minutes</div></div>
-        <div class="cd-unit"><div class="cd-number" id="cd-seconds">—</div><div class="cd-label">Seconds</div></div>
-      </div>
-      <div class="countdown-foot" id="cd-foot">Saturday, July 10, 2027 · noon ET</div>
     </div>
   </header>
 
@@ -1318,8 +1947,8 @@
 
   <!-- ============ TRIP OVERVIEW ============ -->
   <div class="overview-grid">
-    <div class="stat"><div class="stat-num">9</div><div class="stat-label">Family</div></div>
-    <div class="stat"><div class="stat-num">7</div><div class="stat-label">Days</div></div>
+    <div class="stat"><div class="stat-num">12</div><div class="stat-label">Family</div></div>
+    <div class="stat"><div class="stat-num">7</div><div class="stat-label">Nights</div></div>
     <div class="stat"><div class="stat-num">50</div><div class="stat-label">Years</div></div>
     <div class="stat"><div class="stat-num">1</div><div class="stat-label">Beach House</div></div>
   </div>
@@ -1332,7 +1961,7 @@
     <div class="crew">
       <div class="crew-group">
         <h3>The Guests of Honor</h3>
-        <p class="crew-from">Married July 1977</p>
+        <p class="crew-from">Married July 23, 1977</p>
         <div class="crew-members">
           <span class="crew-tag elder">Doug</span>
           <span class="crew-tag elder">Deb</span>
@@ -1344,61 +1973,232 @@
         <p class="crew-from">Flying in from Evergreen, CO</p>
         <div class="crew-members">
           <span class="crew-tag">Brent</span>
-          <span class="crew-tag">Kate <small style="opacity:0.7; font-weight:400; font-style:italic;">née Mehr</small></span>
+          <span class="crew-tag">Kate</span>
           <span class="crew-tag">Declan · 11</span>
         </div>
       </div>
 
-      <div class="crew-group" style="grid-column: span 2;">
+      <div class="crew-group">
         <h3>The Florida Mehrs</h3>
-        <p class="crew-from">Driving down from Ocala</p>
+        <p class="crew-from">Driving in from Ocala</p>
         <div class="crew-members">
           <span class="crew-tag">Anne</span>
+          <span class="crew-tag">Nick</span>
           <span class="crew-tag">Cullen · 10</span>
           <span class="crew-tag">Keely · 12</span>
           <span class="crew-tag">Finley · 14</span>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- ============ DAYS ============ -->
-  <div class="days-section">
-    <div class="section-label">The Itinerary</div>
-    <h2 class="section-title">Seven days, slowly.</h2>
-
-    <div class="view-toggle" role="tablist">
-      <button class="active" data-view="timeline">Timeline</button>
-      <button data-view="detail">Day by Day</button>
-    </div>
-
-    <div id="timeline-view" class="active"></div>
-    <div id="detail-view"></div>
-  </div>
-
-  <!-- ============ MEAL PLAN ============ -->
-  <div class="food-section">
-    <div class="section-label">Provisions</div>
-    <h2 class="section-title">Meal plan &amp; shopping.</h2>
-
-    <div class="food-intro">
-      <strong>The plan:</strong> Florida Mehrs do the big shop on the way down — hit the <strong>Publix in Cape Coral or Fort Myers</strong> before the causeway. Captiva groceries are limited and pricey, so come stocked. Colorado O'Malleys can grab anything missed near RSW Saturday afternoon. Most meals at the house; we eat out four times. The list below feeds 9 people for the week.
-    </div>
-
-    <h3 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.25rem; color: var(--gulf-deep); margin-bottom: 1rem;">The Week of Meals</h3>
-    <div id="meal-plan" class="meal-grid"></div>
-
-    <h3 style="font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.25rem; color: var(--gulf-deep); margin-bottom: 1rem; margin-top: 1rem;">The Shopping List</h3>
-
-    <div class="shop-controls">
-      <div class="shop-progress" id="shop-progress">Loading…</div>
-      <div class="shop-actions">
-        <button class="shop-btn" id="shop-copy">Copy as Text</button>
-        <button class="shop-btn" id="shop-clear">Clear Checks</button>
+      <div class="crew-group">
+        <h3>Jake &amp; Sarah</h3>
+        <p class="crew-from">Flying in from Arizona</p>
+        <div class="crew-members">
+          <span class="crew-tag">Jake</span>
+          <span class="crew-tag">Sarah</span>
+        </div>
       </div>
     </div>
+  </div>
 
-    <div id="shopping-list" class="shop-grid"></div>
+  <!-- ============ VACATION OPTIONS ============ -->
+  <div class="options-section">
+    <div class="section-label">Next Adventure</div>
+    <h2 class="section-title">Two options. <em>You decide.</em></h2>
+
+    <div class="options-intro">
+      <strong>July 17–24, 2027 · 7 nights.</strong> Two great properties, one family vote. Browse each option below, then scroll down to cast your pick.
+    </div>
+
+    <div class="options-grid">
+
+      <!-- Option 1: Dauphin Island, Alabama -->
+      <div class="option-card">
+        <div class="option-img-wrap">
+          <img class="option-img"
+               src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=900&auto=format&fit=crop&q=70"
+               alt="Dauphin Island, Alabama"
+               onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, var(--gulf-light), var(--gulf))';" />
+          <div class="option-overlay">
+            <div class="option-num">Option 1</div>
+            <div class="option-dates-badge">Jul 17–24</div>
+            <div class="option-location">Dauphin Island · Alabama Gulf Coast</div>
+            <div class="option-name">Seas the Day</div>
+          </div>
+        </div>
+        <div class="option-body">
+          <p class="option-tagline">Sound-front living with a private shoreline and a 2-minute walk to the Gulf — roomy enough for the whole crew with space to spare. Pool on-site, bunk suite with an arcade machine for the kids.</p>
+          <div class="option-stats">
+            <div class="option-stat"><div class="option-stat-num">5</div><div class="option-stat-label">Bedrooms</div></div>
+            <div class="option-stat"><div class="option-stat-num">4</div><div class="option-stat-label">Bathrooms</div></div>
+            <div class="option-stat"><div class="option-stat-num">22</div><div class="option-stat-label">Max Guests</div></div>
+            <div class="option-stat"><div class="option-stat-num">5.0</div><div class="option-stat-label">★ Rating</div></div>
+          </div>
+          <div class="option-highlights">
+            <span class="option-highlight">Sound-front views</span>
+            <span class="option-highlight">Private shoreline</span>
+            <span class="option-highlight">Gulf beach access</span>
+            <span class="option-highlight">Pool</span>
+            <span class="option-highlight">Bunk suite + arcade</span>
+            <span class="option-highlight">Dogs welcome</span>
+            <span class="option-highlight">Local host · 8 yrs</span>
+          </div>
+
+          <div class="option-activities">
+            <div class="option-act-title">Nearby Activities</div>
+            <ul class="option-act-list">
+              <li>⛳ <strong>Isle Dauphine Golf Club</strong> — 9-hole Gulf-side course minutes away</li>
+              <li>🎣 <strong>Dauphin Island Pier</strong> — cast for redfish, speckled trout &amp; flounder</li>
+              <li>🐬 <strong>Dolphin Cruises</strong> — guided tours through Mobile Bay</li>
+              <li>🚣 <strong>Kayak &amp; Paddleboard</strong> — explore Bayou Heron Lake and the marshes</li>
+              <li>🏰 <strong>Fort Gaines</strong> — Civil War fort with cannons and panoramic bay views</li>
+              <li>🦅 <strong>Audubon Bird Sanctuary</strong> — 137-acre protected habitat with walking trails</li>
+              <li>🐠 <strong>Dauphin Island Sea Lab &amp; Estuarium</strong> — hands-on Gulf Coast aquarium</li>
+              <li>🐚 <strong>Shelling</strong> — West End Beach is prime territory for sand dollars &amp; conch</li>
+            </ul>
+          </div>
+          <div class="option-footer">
+            <a class="option-link" href="https://www.airbnb.com/rooms/1604446128905321661" target="_blank" rel="noopener">View on Airbnb →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Option 2: Palm Coast, Florida -->
+      <div class="option-card">
+        <div class="option-img-wrap">
+          <img class="option-img"
+               src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&auto=format&fit=crop&q=70"
+               alt="Palm Coast, Florida"
+               onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, var(--gulf-light), var(--gulf))';" />
+          <div class="option-overlay">
+            <div class="option-num">Option 2</div>
+            <div class="option-dates-badge">Jul 17–24</div>
+            <div class="option-location">Palm Coast · Florida Atlantic</div>
+            <div class="option-name">Life's a Beach</div>
+          </div>
+        </div>
+        <div class="option-body">
+          <p class="option-tagline">Three-story oceanfront home with balconies on every level, direct dune walkover to the Atlantic, and panoramic views where dolphins and whales cruise by. Beach gear already on-site.</p>
+          <div class="option-stats">
+            <div class="option-stat"><div class="option-stat-num">6</div><div class="option-stat-label">Bedrooms</div></div>
+            <div class="option-stat"><div class="option-stat-num">4</div><div class="option-stat-label">Bathrooms</div></div>
+            <div class="option-stat"><div class="option-stat-num">12</div><div class="option-stat-label">Max Guests</div></div>
+            <div class="option-stat"><div class="option-stat-num">4.66</div><div class="option-stat-label">★ Rating</div></div>
+          </div>
+          <div class="option-highlights">
+            <span class="option-highlight">Direct oceanfront</span>
+            <span class="option-highlight">Dune walkover</span>
+            <span class="option-highlight">Dolphins &amp; whales</span>
+            <span class="option-highlight">Multi-level balconies</span>
+            <span class="option-highlight">Beach gear included</span>
+            <span class="option-highlight">BBQ grill</span>
+            <span class="option-highlight">Superhost · 92 reviews</span>
+          </div>
+
+          <div class="option-activities">
+            <div class="option-act-title">Nearby Activities</div>
+            <ul class="option-act-list">
+              <li>⛳ <strong>Hammock Beach Golf Resort</strong> — Jack Nicklaus Ocean Course with 6 holes along the Atlantic</li>
+              <li>🎣 <strong>Charter Fishing</strong> — deep-sea and inshore charters out of Flagler Beach</li>
+              <li>🐬 <strong>Marineland Dolphin Adventure</strong> — swim and interact with dolphins (right next door)</li>
+              <li>🐢 <strong>Sea Turtle Hospital</strong> — Whitney Laboratory rehabilitation &amp; education center</li>
+              <li>🚣 <strong>Kayak the Mangroves</strong> — guided tours through salt marshes and creeks</li>
+              <li>🌿 <strong>Washington Oaks Gardens State Park</strong> — formal gardens and coquina rock formations</li>
+              <li>🏄 <strong>Flagler Beach</strong> — surfing, shelling, sunrise walks, and pier fishing</li>
+              <li>🍽️ <strong>Funky Pelican's &amp; Golden Lion Café</strong> — local waterfront dining favorites</li>
+            </ul>
+          </div>
+          <div class="option-footer">
+            <a class="option-link" href="https://www.airbnb.com/rooms/46007158" target="_blank" rel="noopener">View on Airbnb →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+      <!-- Vote Board -->
+      <div class="vote-board">
+        <h3 class="vote-board-title">🗳️ Family Vote</h3>
+        <p class="vote-board-intro">Select who you are, then pick your favorite.</p>
+
+        <div class="voter-select">
+          <button class="voter-btn" data-voter="doug-deb" onclick="selectVoter('doug-deb')">Doug &amp; Deb</button>
+          <button class="voter-btn" data-voter="brent" onclick="selectVoter('brent')">Brent</button>
+          <button class="voter-btn" data-voter="kate" onclick="selectVoter('kate')">Kate</button>
+          <button class="voter-btn" data-voter="declan" onclick="selectVoter('declan')">Declan</button>
+          <button class="voter-btn" data-voter="anne" onclick="selectVoter('anne')">Anne</button>
+          <button class="voter-btn" data-voter="nick" onclick="selectVoter('nick')">Nick</button>
+          <button class="voter-btn" data-voter="cullen" onclick="selectVoter('cullen')">Cullen</button>
+          <button class="voter-btn" data-voter="keely" onclick="selectVoter('keely')">Keely</button>
+          <button class="voter-btn" data-voter="finley" onclick="selectVoter('finley')">Finley</button>
+          <button class="voter-btn" data-voter="jake" onclick="selectVoter('jake')">Jake</button>
+          <button class="voter-btn" data-voter="sarah" onclick="selectVoter('sarah')">Sarah</button>
+        </div>
+
+        <div class="cast-vote" id="cast-vote-area" style="display:none">
+          <p class="cast-vote-prompt">I want to go to…</p>
+          <div class="cast-vote-btns">
+            <button class="cast-btn" data-option="1" onclick="castVote(1)">
+              <span class="cast-btn-num">1</span>
+              <span class="cast-btn-name">Seas the Day</span>
+              <span class="cast-btn-loc">Dauphin Island · AL</span>
+            </button>
+            <button class="cast-btn" data-option="2" onclick="castVote(2)">
+              <span class="cast-btn-num">2</span>
+              <span class="cast-btn-name">Life's a Beach</span>
+              <span class="cast-btn-loc">Palm Coast · FL</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="vote-tally">
+          <div class="tally-row" id="tally-doug-deb">
+            <span class="tally-name">Doug &amp; Deb</span>
+            <span class="tally-pick tally-none" id="pick-doug-deb">not voted yet</span>
+          </div>
+          <div class="tally-row" id="tally-brent">
+            <span class="tally-name">Brent</span>
+            <span class="tally-pick tally-none" id="pick-brent">not voted yet</span>
+          </div>
+          <div class="tally-row" id="tally-kate">
+            <span class="tally-name">Kate</span>
+            <span class="tally-pick tally-none" id="pick-kate">not voted yet</span>
+          </div>
+          <div class="tally-row" id="tally-declan">
+            <span class="tally-name">Declan</span>
+            <span class="tally-pick tally-none" id="pick-declan">not voted yet</span>
+          </div>
+          <div class="tally-row" id="tally-anne">
+            <span class="tally-name">Anne</span>
+            <span class="tally-pick tally-none" id="pick-anne">not voted yet</span>
+          </div>
+          <div class="tally-row" id="tally-nick">
+            <span class="tally-name">Nick</span>
+            <span class="tally-pick tally-none" id="pick-nick">not voted yet</span>
+          </div>
+          <div class="tally-row" id="tally-cullen">
+            <span class="tally-name">Cullen</span>
+            <span class="tally-pick tally-none" id="pick-cullen">not voted yet</span>
+          </div>
+          <div class="tally-row" id="tally-keely">
+            <span class="tally-name">Keely</span>
+            <span class="tally-pick tally-none" id="pick-keely">not voted yet</span>
+          </div>
+          <div class="tally-row" id="tally-finley">
+            <span class="tally-name">Finley</span>
+            <span class="tally-pick tally-none" id="pick-finley">not voted yet</span>
+          </div>
+          <div class="tally-row" id="tally-jake">
+            <span class="tally-name">Jake</span>
+            <span class="tally-pick tally-none" id="pick-jake">not voted yet</span>
+          </div>
+          <div class="tally-row" id="tally-sarah">
+            <span class="tally-name">Sarah</span>
+            <span class="tally-pick tally-none" id="pick-sarah">not voted yet</span>
+          </div>
+        </div>
+      </div>
+
   </div>
 
   <!-- ============ NOTES ============ -->
@@ -1411,194 +2211,18 @@
     </div>
   </div>
 
-  <div style="text-align: center; margin-bottom: 3rem;">
-    <button class="reset-btn" id="reset-btn">Reset all check-marks</button>
-  </div>
 
   <footer>
     Here's to fifty more <span class="heart">♥</span><br>
-    Made with love for the Mehr family · July 2027
+    Made with love for the Mehr family · Summer 2027
   </footer>
 
 </div>
 
 <script>
-  // ============ ITINERARY DATA ============
-  const itinerary = [
-    {
-      num: 1,
-      date: "Saturday, July 10",
-      title: "Arrival Day — <em>Settling in</em>",
-      story: "Two arrivals, one driveway. The Florida Mehrs pull up first with a cooler of essentials; the Colorado crew lands in Fort Myers and rolls in by late afternoon. First toes in the sand before dark.",
-      hero: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=70",
-      highlights: ["Family reunion", "Settle in", "First sunset"],
-      thumbs: [
-        { url: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=400&auto=format&fit=crop&q=60", label: "Beach house porch" },
-        { url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&auto=format&fit=crop&q=60", label: "Captiva beach" }
-      ],
-      items: [
-        { time: "12:00 PM", title: "Florida Mehrs arrive at Flamingo Beach", desc: "Anne, Cullen, Keely & Finley pull in from Ocala. Cousins claim bedrooms, do the grocery run, scout the beach.", img: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=200&auto=format&fit=crop&q=60" },
-        { time: "4:30 PM", title: "Colorado crew lands at RSW", desc: "Brent, Kate & Declan — pick up rental car. ~1 hour drive to Captiva via the Sanibel Causeway.", img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=200&auto=format&fit=crop&q=60" },
-        { time: "6:00 PM", title: "Family hug at the house", desc: "Everyone together. Big porch photo — this becomes Day 1 of the trip album. Finley on photographer duty.", img: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=200&auto=format&fit=crop&q=60" },
-        { time: "7:00 PM", title: "Easy first-night dinner at the house", desc: "Pre-stocked groceries, grill on the deck. No restaurant on arrival night — just feet up, four cousins reuniting, the adults catching up.", img: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=200&auto=format&fit=crop&q=60" },
-        { time: "9:00 PM", title: "Sunset walk on the beach", desc: "Quick barefoot stroll. Kids stay out as late as they want — first night of vacation rules.", tag: "Tradition", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=200&auto=format&fit=crop&q=60" }
-      ]
-    },
-    {
-      num: 2,
-      date: "Sunday, July 11",
-      title: "Beach Day &amp; Bike the Island",
-      story: "No agenda. Cousins on the beach all morning, lunch in the village by bike, then a long lazy afternoon. The grandparents claim their favorite chairs early.",
-      hero: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&auto=format&fit=crop&q=70",
-      highlights: ["Beach morning", "Bike to lunch", "Shelling", "Mucky Duck sunset"],
-      thumbs: [
-        { url: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=400&auto=format&fit=crop&q=60", label: "Captiva Beach" },
-        { url: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&auto=format&fit=crop&q=60", label: "Beach cruisers" },
-        { url: "https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?w=400&auto=format&fit=crop&q=60", label: "Shelling" },
-        { url: "https://images.unsplash.com/photo-1502136969935-8d8eef54d77b?w=400&auto=format&fit=crop&q=60", label: "Mucky Duck sunset" }
-      ],
-      items: [
-        { time: "8:00 AM", title: "Coffee on the deck", desc: "Doug & Deb get the first quiet hour. Pelican flyover usually starts around now.", img: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=200&auto=format&fit=crop&q=60" },
-        { time: "9:30 AM", title: "Beach morning — Captiva Beach", desc: "Boogie boards, football, paddleball. Cullen and Declan will be in the water for three hours straight. Sunscreen and reapply, reapply, reapply.", img: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=200&auto=format&fit=crop&q=60" },
-        { time: "12:30 PM", title: "Bike to lunch at RC Otter's", desc: "Rent cruisers from YOLO or Billy's Rentals for the week — the whole island is bikeable. Cousins ride together. Order the conch fritters.", tag: "Bikes", img: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=200&auto=format&fit=crop&q=60" },
-        { time: "2:30 PM", title: "Pool / porch / quiet hours", desc: "Heat peaks now. Adults nap. Kids get screen time or a card-game tournament on the porch.", img: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=200&auto=format&fit=crop&q=60" },
-        { time: "5:00 PM", title: "Shelling at Turner Beach", desc: "The best shelling on the island — kids compete for the best whelks, conch, and sand dollars. Bring buckets.", tag: "Activity", img: "https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?w=200&auto=format&fit=crop&q=60" },
-        { time: "7:00 PM", title: "Sunset dinner at The Mucky Duck", desc: "Toes-in-sand picnic tables, the island's classic sunset spot. Get there 90 min early — they don't take reservations.", img: "https://images.unsplash.com/photo-1502136969935-8d8eef54d77b?w=200&auto=format&fit=crop&q=60" }
-      ]
-    },
-    {
-      num: 3,
-      date: "Monday, July 12",
-      title: "Dolphin Cruise &amp; <em>Cabbage Key</em>",
-      story: "The big group adventure — Captiva Cruises out to Cabbage Key, wild dolphins along the way, lunch at the legendary dollar-bill restaurant. Every cousin tapes up a bill of their own.",
-      hero: "https://images.unsplash.com/photo-1564550974352-92f6cfc83b6e?w=1200&auto=format&fit=crop&q=70",
-      highlights: ["Boat ride", "Wild dolphins", "Dollar-bill lunch", "Cousin signatures"],
-      thumbs: [
-        { url: "https://images.unsplash.com/photo-1564550974352-92f6cfc83b6e?w=400&auto=format&fit=crop&q=60", label: "Captiva Cruises" },
-        { url: "https://images.unsplash.com/photo-1607153333879-c174d265f1d2?w=400&auto=format&fit=crop&q=60", label: "Wild dolphins" },
-        { url: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&auto=format&fit=crop&q=60", label: "Cabbage Key burger" }
-      ],
-      items: [
-        { time: "8:30 AM", title: "Breakfast at the house", desc: "Eat well — it's an active day. Pack reef-safe sunscreen, hats, light layer for the boat, $1 bills for the wall.", img: "https://images.unsplash.com/photo-1493770348161-369560ae357d?w=200&auto=format&fit=crop&q=60" },
-        { time: "10:00 AM", title: "Board Captiva Cruises at McCarthy's Marina", desc: "Lunch cruise to Cabbage Key. ~45-min ride out — captain calls out dolphins, the kids will be at the rail the whole way.", img: "https://images.unsplash.com/photo-1564550974352-92f6cfc83b6e?w=200&auto=format&fit=crop&q=60" },
-        { time: "12:00 PM", title: "Cabbage Key Inn — the dollar-bill lunch", desc: "Cheeseburger in paradise, key lime pie. Walls and ceiling covered in $70k+ of taped bills. Every kid signs and tapes one — find it on the next trip.", tag: "Bucket List", img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=200&auto=format&fit=crop&q=60" },
-        { time: "1:30 PM", title: "Explore the island", desc: "Short nature trail, water tower views, gopher tortoises. The cousins will scatter and find things.", img: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=200&auto=format&fit=crop&q=60" },
-        { time: "3:30 PM", title: "Cruise back to Captiva", desc: "Quieter ride home. Sunburned and content.", img: "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=200&auto=format&fit=crop&q=60" },
-        { time: "7:00 PM", title: "Pizza night at home", desc: "Order in. Backyard movie projected on a sheet, or a four-cousin card-game tournament. Low-key after a big day.", img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=200&auto=format&fit=crop&q=60" }
-      ]
-    },
-    {
-      num: 4,
-      date: "Tuesday, July 13",
-      title: "Water Day — <em>Kayaks &amp; WaveRunners</em>",
-      story: "All-in water day. Younger crew does a guided kayak/SUP tour through the mangroves; the older kids and adults who want adrenaline take a WaveRunner tour. Everyone meets back for lunch.",
-      hero: "https://images.unsplash.com/photo-1463693396721-8ca0cfa49c0c?w=1200&auto=format&fit=crop&q=70",
-      highlights: ["Mangrove kayak", "WaveRunner tour", "Shell Museum", "Cookout"],
-      thumbs: [
-        { url: "https://images.unsplash.com/photo-1463693396721-8ca0cfa49c0c?w=400&auto=format&fit=crop&q=60", label: "Mangrove kayak" },
-        { url: "https://images.unsplash.com/photo-1530541919269-7c3f8ef72b89?w=400&auto=format&fit=crop&q=60", label: "WaveRunner" },
-        { url: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&auto=format&fit=crop&q=60", label: "Shell Museum" },
-        { url: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&auto=format&fit=crop&q=60", label: "Cookout" }
-      ],
-      items: [
-        { time: "9:00 AM", title: "Guided kayak / SUP — Adventure Sea Kayak", desc: "Calm mangrove tunnels off Buck Key. Manatees and rays common. Great for Declan, Cullen, Keely — Doug & Deb if they're game.", tag: "Younger crew", img: "https://images.unsplash.com/photo-1463693396721-8ca0cfa49c0c?w=200&auto=format&fit=crop&q=60" },
-        { time: "9:30 AM", title: "WaveRunner tour — Captiva Watersports", desc: "Guided 2-hour tour around Pine Island Sound. Finley (14) can ride passenger with a parent; the adults swap drivers. Books up — reserve now.", tag: "Finley + adults", img: "https://images.unsplash.com/photo-1530541919269-7c3f8ef72b89?w=200&auto=format&fit=crop&q=60" },
-        { time: "1:00 PM", title: "Family reunites for lunch — Keylime Bistro", desc: "Heart of Captiva Village. Walking distance from the house. Coconut shrimp, fish tacos, frozen drinks.", img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&auto=format&fit=crop&q=60" },
-        { time: "3:00 PM", title: "Bailey-Matthews National Shell Museum", desc: "Short drive to Sanibel. Way more interesting than it sounds — live tank, deep-sea exhibits, a hit with this age range. Worth the AC alone.", tag: "Indoor / AC", img: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=200&auto=format&fit=crop&q=60" },
-        { time: "7:00 PM", title: "Cookout at the house", desc: "Grill night. Doug on burger duty (tradition). Cornhole tournament — cousins vs. parents. Stakes: dishes.", img: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=200&auto=format&fit=crop&q=60" }
-      ]
-    },
-    {
-      num: 5,
-      date: "Wednesday, July 14",
-      title: "Anniversary Day — <em>The Main Event</em>",
-      story: "Today is the day. Slow morning, a big family photo session at golden hour, the anniversary dinner at Crow's Nest, and a 50-year toast on the beach. The cousins lead the toast.",
-      hero: "https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&auto=format&fit=crop&q=70",
-      highlights: ["Memory book", "Spa for Deb", "Beach photos", "Crow's Nest", "50-year toast"],
-      thumbs: [
-        { url: "https://images.unsplash.com/photo-1519741497674-611481863552?w=400&auto=format&fit=crop&q=60", label: "Family photo session" },
-        { url: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=400&auto=format&fit=crop&q=60", label: "Spa hour" },
-        { url: "https://images.unsplash.com/photo-1544025162-d76694265947?w=400&auto=format&fit=crop&q=60", label: "Anniversary dinner" },
-        { url: "https://images.unsplash.com/photo-1530023367847-a683933f4172?w=400&auto=format&fit=crop&q=60", label: "Beach toast" }
-      ],
-      items: [
-        { time: "9:00 AM", title: "Anniversary breakfast at the house", desc: "Mimosas for the adults, pancakes for the kids. Four cousins work on a hand-made memory book for Doug & Deb — each grandkid does a page.", img: "https://images.unsplash.com/photo-1493770348161-369560ae357d?w=200&auto=format&fit=crop&q=60" },
-        { time: "11:00 AM", title: "Beach morning, parents-on-duty", desc: "Doug & Deb get a few hours to themselves. Long walk, coffee, swim — whatever they want. Kids stay in the pool.", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=200&auto=format&fit=crop&q=60" },
-        { time: "2:00 PM", title: "Spa hour for Deb (and anyone who wants)", desc: "'Tween Waters Spa or an in-home massage. Book this 8+ weeks ahead — July fills up.", img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=200&auto=format&fit=crop&q=60" },
-        { time: "4:00 PM", title: "Family photo session on the beach", desc: "Hire a local photographer for 1 hour at golden-light. Coordinated colors — white/khaki/light blue. Group, couple, just-the-grandkids. This is THE photo.", tag: "Plan ahead", img: "https://images.unsplash.com/photo-1519741497674-611481863552?w=200&auto=format&fit=crop&q=60" },
-        { time: "6:30 PM", title: "Anniversary dinner — Crow's Nest Steakhouse", desc: "180° Gulf views, the only second-floor restaurant on the island. Reservations essential — book 3+ months out. Cake at the table.", tag: "The Big One", img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=200&auto=format&fit=crop&q=60" },
-        { time: "9:00 PM", title: "50-year toast on the beach", desc: "Champagne in plastic flutes, sparkling cider for the cousins. The grandkids present the memory book. Each kid says one thing. So do you.", tag: "Tradition", img: "https://images.unsplash.com/photo-1530023367847-a683933f4172?w=200&auto=format&fit=crop&q=60" }
-      ]
-    },
-    {
-      num: 6,
-      date: "Thursday, July 15",
-      title: "Cayo Costa Day Trip",
-      story: "The biggest, emptiest, wildest beach in southwest Florida — accessible only by boat. World-class shelling, no crowds, no buildings. Pack a serious picnic and stay all day.",
-      hero: "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=1200&auto=format&fit=crop&q=70",
-      highlights: ["Boat to a deserted island", "Picnic", "Best shelling in the US", "Bubble Room dinner"],
-      thumbs: [
-        { url: "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=400&auto=format&fit=crop&q=60", label: "Cayo Costa" },
-        { url: "https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?w=400&auto=format&fit=crop&q=60", label: "Shell hunt" },
-        { url: "https://images.unsplash.com/photo-1528712306091-ed0763094c98?w=400&auto=format&fit=crop&q=60", label: "Beach picnic" },
-        { url: "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&auto=format&fit=crop&q=60", label: "Bubble Room" }
-      ],
-      items: [
-        { time: "8:00 AM", title: "Pack the day-trip cooler", desc: "Sandwiches, fruit, lots of water, sunscreen, hats, shell bags, towels. There are no shops on Cayo Costa.", img: "https://images.unsplash.com/photo-1528712306091-ed0763094c98?w=200&auto=format&fit=crop&q=60" },
-        { time: "9:30 AM", title: "Captiva Cruises to Cayo Costa", desc: "~45-min boat ride. Tractor-pulled tram drops you at the Gulf-side beach. State park — pristine.", img: "https://images.unsplash.com/photo-1564550974352-92f6cfc83b6e?w=200&auto=format&fit=crop&q=60" },
-        { time: "11:00 AM", title: "Shell hunt, swim, picnic", desc: "Best shelling in the U.S. The cousins will fill bags. Adults will read in the shade.", tag: "Bucket List", img: "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=200&auto=format&fit=crop&q=60" },
-        { time: "2:30 PM", title: "Last swim, tram back to the dock", desc: "Don't miss the return tram — there's only one boat back.", img: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=200&auto=format&fit=crop&q=60" },
-        { time: "3:30 PM", title: "Boat back to Captiva", desc: "Tired, salty, happy. Naps in the car.", img: "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=200&auto=format&fit=crop&q=60" },
-        { time: "5:30 PM", title: "Pool & quiet evening", desc: "Sort the shell haul on the porch. Adults pour something cold.", img: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=200&auto=format&fit=crop&q=60" },
-        { time: "7:30 PM", title: "Dinner at The Bubble Room", desc: "Captiva legend — wild decor, model trains running through the dining room, cake slices the size of your head. The cousins will love it.", tag: "Iconic", img: "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=200&auto=format&fit=crop&q=60" }
-      ]
-    },
-    {
-      num: 7,
-      date: "Friday, July 16",
-      title: "Parasail &amp; <em>Captiva Classics</em>",
-      story: "Last full day. Parasailing in the morning for whoever's brave, classic Captiva moves the rest of the day — beach, ice cream, sunset, one more island dinner.",
-      hero: "https://images.unsplash.com/photo-1530541919269-7c3f8ef72b89?w=1200&auto=format&fit=crop&q=70",
-      highlights: ["Parasailing", "Last beach day", "Ice cream", "Final sunset"],
-      thumbs: [
-        { url: "https://images.unsplash.com/photo-1530541919269-7c3f8ef72b89?w=400&auto=format&fit=crop&q=60", label: "Parasailing" },
-        { url: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=400&auto=format&fit=crop&q=60", label: "Beach afternoon" },
-        { url: "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=400&auto=format&fit=crop&q=60", label: "Ice cream" },
-        { url: "https://images.unsplash.com/photo-1502136969935-8d8eef54d77b?w=400&auto=format&fit=crop&q=60", label: "Final sunset" }
-      ],
-      items: [
-        { time: "7:30 AM", title: "Sunrise walk (bay side)", desc: "Whoever's up. Short walk on the bay side. Coffee in hand. Finley usually sleeps through this.", img: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=200&auto=format&fit=crop&q=60" },
-        { time: "9:30 AM", title: "Parasailing — YOLO Watersports", desc: "Tandem or triple flights, 600-800 ft up. Cousins can fly with a parent. Spectacular views of the whole island. Book day-one of the trip.", tag: "Optional", img: "https://images.unsplash.com/photo-1530541919269-7c3f8ef72b89?w=200&auto=format&fit=crop&q=60" },
-        { time: "12:30 PM", title: "Lunch at The Green Flash", desc: "Waterfront, Pine Island Sound views. Adults grab a frozen drink. The view is the meal.", img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=200&auto=format&fit=crop&q=60" },
-        { time: "2:30 PM", title: "Last beach afternoon", desc: "Everyone on the sand. Football, paddleball, last swim. Group photo while everyone's still tan.", img: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=200&auto=format&fit=crop&q=60" },
-        { time: "4:30 PM", title: "Ice cream at Scoops & Slices", desc: "Mandatory. The kids pick. Cones on the porch back at the house.", img: "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=200&auto=format&fit=crop&q=60" },
-        { time: "5:30 PM", title: "Final sunset — Captiva Beach", desc: "Bring the chairs, bring a small speaker, bring nothing. Final green-flash chance. Stay until it's dark.", tag: "Tradition", img: "https://images.unsplash.com/photo-1502136969935-8d8eef54d77b?w=200&auto=format&fit=crop&q=60" },
-        { time: "7:30 PM", title: "Last dinner + pack", desc: "Easy at home — clear out the fridge. Florida crew loads the car tonight; Colorado packs and leaves bags by the door.", img: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=200&auto=format&fit=crop&q=60" }
-      ]
-    },
-    {
-      num: 8,
-      date: "Saturday, July 17",
-      title: "Departure",
-      story: "Hugs on the porch, one more lap of the house for forgotten chargers, and the long quiet drive home. The trip ends. The memory does not.",
-      hero: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=1200&auto=format&fit=crop&q=70",
-      highlights: ["Porch photo bookend", "Goodbyes", "Drive home"],
-      thumbs: [
-        { url: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=400&auto=format&fit=crop&q=60", label: "Final morning" },
-        { url: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400&auto=format&fit=crop&q=60", label: "Drive home" }
-      ],
-      items: [
-        { time: "8:00 AM", title: "Last coffee on the deck", desc: "Everyone in one spot one last time. Re-shoot the porch photo from Day 1 — same spots, same people, seven days later.", img: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=200&auto=format&fit=crop&q=60" },
-        { time: "9:30 AM", title: "Florida Mehrs head north", desc: "~3 hour drive back to Ocala. Snacks for the back seat. Audiobook queued.", img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=200&auto=format&fit=crop&q=60" },
-        { time: "10:30 AM", title: "Colorado O'Malleys to RSW", desc: "Return rental, flight home to Denver. Reach Evergreen by evening.", img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=200&auto=format&fit=crop&q=60" },
-        { time: "11:00 AM", title: "Check-out — close up Flamingo Beach", desc: "Trash out, dishwasher running, AC to 78°. Leave a thank-you note. Lock up. Drive away slow.", img: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=200&auto=format&fit=crop&q=60" }
-      ]
-    }
-  ];
-
   // ============ STORAGE HELPERS ============
   const STORAGE = window.storage;
-  const FALLBACK_PREFIX = "mehr_captiva_";
+  const FALLBACK_PREFIX = "mehr_vacation_";
 
   async function loadKey(key) {
     try {
@@ -1628,289 +2252,13 @@
   }
 
   // ============ RENDER ============
-  const checked = {};
 
   async function init() {
-    // Load checked state
-    const saved = await loadKey("checked");
-    if (saved) {
-      try { Object.assign(checked, JSON.parse(saved)); } catch (e) {}
-    }
-
-    // Load shopping checked state
-    const shopSaved = await loadKey("shopping");
-    if (shopSaved) {
-      try { Object.assign(shopChecked, JSON.parse(shopSaved)); } catch (e) {}
-    }
-
     // Load notes
     const notes = await loadKey("notes");
     if (notes) document.getElementById("notes").value = notes;
 
-    renderDays();
-    renderMealPlan();
-    renderShoppingList();
     bindNotes();
-    bindReset();
-    bindShopActions();
-    startCountdown();
-  }
-
-  // ============ COUNTDOWN ============
-  // Target: Saturday, July 10, 2027, 12:00 PM Eastern Time (ET = UTC-4 in July, EDT)
-  const TRIP_START = new Date("2027-07-10T12:00:00-04:00").getTime();
-  const TRIP_END = new Date("2027-07-17T11:00:00-04:00").getTime();
-
-  function startCountdown() {
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  }
-
-  function updateCountdown() {
-    const now = Date.now();
-    const cdEl = document.getElementById("countdown");
-    const labelEl = document.getElementById("cd-label");
-    const footEl = document.getElementById("cd-foot");
-
-    let target, diff, isOver = false, isHere = false;
-
-    if (now < TRIP_START) {
-      // Before the trip
-      target = TRIP_START;
-      diff = target - now;
-      cdEl.classList.remove("here", "over");
-      labelEl.textContent = "The trip begins in";
-      footEl.textContent = "Saturday, July 10, 2027 · noon ET";
-    } else if (now < TRIP_END) {
-      // During the trip
-      diff = TRIP_END - now;
-      isHere = true;
-      cdEl.classList.add("here");
-      cdEl.classList.remove("over");
-      labelEl.textContent = "We're on Captiva — time remaining";
-      footEl.textContent = "Trip ends Saturday, July 17 · 11 AM checkout";
-    } else {
-      // After the trip
-      diff = now - TRIP_END;
-      isOver = true;
-      cdEl.classList.add("over");
-      cdEl.classList.remove("here");
-      labelEl.textContent = "Time since the trip";
-      footEl.textContent = "Already missing it.";
-    }
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-
-    setNum("cd-days", days);
-    setNum("cd-hours", String(hours).padStart(2, "0"));
-    setNum("cd-minutes", String(minutes).padStart(2, "0"));
-    setNum("cd-seconds", String(seconds).padStart(2, "0"));
-  }
-
-  function setNum(id, val) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    const newVal = String(val);
-    if (el.textContent !== newVal) {
-      el.textContent = newVal;
-      // Subtle pulse animation on seconds
-      if (id === "cd-seconds") {
-        const unit = el.closest(".cd-unit");
-        if (unit) {
-          unit.classList.remove("tick");
-          void unit.offsetWidth; // restart animation
-          unit.classList.add("tick");
-        }
-      }
-    }
-  }
-
-  function renderTimeline() {
-    const root = document.getElementById("timeline-view");
-    root.innerHTML = `<div class="timeline">` + itinerary.map(d => {
-      const total = d.items.length;
-      const done = d.items.filter((_, i) => checked[`d${d.num}_i${i}`]).length;
-
-      const highlightsHtml = (d.highlights || []).map(h =>
-        `<span class="tl-highlight">${h}</span>`
-      ).join("");
-
-      const thumbsHtml = (d.thumbs || []).map(t => `
-        <div class="tl-thumb">
-          <img src="${t.url}" alt="${t.label}" loading="lazy"
-               onerror="this.style.display='none'; this.parentElement.style.background='var(--sand-deep)';" />
-          <div class="tl-thumb-label">${t.label}</div>
-        </div>`).join("");
-
-      return `
-        <div class="timeline-day" data-day="${d.num}">
-          <div class="tl-img-wrap">
-            <img class="tl-img" src="${d.hero}" alt="${d.date}" loading="lazy"
-                 onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, var(--gulf-light), var(--gulf))';" />
-            <div class="tl-img-overlay">
-              <div class="tl-day-num">${d.num}<small>Day</small></div>
-              <div class="tl-date">${d.date}</div>
-              <div class="tl-title">${d.title}</div>
-            </div>
-          </div>
-          <div class="tl-body">
-            <div class="tl-story">${d.story}</div>
-            ${highlightsHtml ? `<div class="tl-highlights">${highlightsHtml}</div>` : ""}
-            ${thumbsHtml ? `<div class="tl-thumbs">${thumbsHtml}</div>` : ""}
-            <button class="tl-expand" data-jump="${d.num}">View ${total} activities · ${done}/${total} done</button>
-          </div>
-        </div>`;
-    }).join("") + `</div>`;
-
-    // Jump-to-detail buttons
-    root.querySelectorAll(".tl-expand").forEach(btn => {
-      btn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        const dayNum = btn.dataset.jump;
-        // Switch to detail view
-        switchView("detail");
-        // Open the day
-        setTimeout(() => {
-          const dayEl = document.querySelector(`#detail-view .day[data-day="${dayNum}"]`);
-          if (dayEl) {
-            dayEl.classList.add("open");
-            dayEl.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
-        }, 50);
-      });
-    });
-  }
-
-  function renderDetail() {
-    const root = document.getElementById("detail-view");
-    root.innerHTML = itinerary.map((d, idx) => {
-      const itemsHtml = d.items.map((it, i) => {
-        const key = `d${d.num}_i${i}`;
-        const isDone = !!checked[key];
-        const tag = it.tag ? `<span class="item-tag">${it.tag}</span>` : "";
-        const imgHtml = it.img ? `
-          <div class="item-img">
-            <img src="${it.img}" alt="${it.title}" loading="lazy"
-                 onerror="this.style.display='none'; this.parentElement.style.background='var(--sand-deep)';" />
-          </div>` : "";
-        return `
-          <div class="item ${isDone ? 'done' : ''}" data-key="${key}">
-            <div class="check">
-              <svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg>
-            </div>
-            <div class="item-time">${it.time}</div>
-            ${imgHtml}
-            <div class="item-body">
-              <div class="item-title">${it.title}${tag}</div>
-              <div class="item-desc">${it.desc}</div>
-            </div>
-          </div>`;
-      }).join("");
-
-      const total = d.items.length;
-      const done = d.items.filter((_, i) => checked[`d${d.num}_i${i}`]).length;
-      const pct = total ? done / total : 0;
-      const circ = 2 * Math.PI * 15;
-      const offset = circ * (1 - pct);
-
-      return `
-        <div class="day ${idx === 0 ? 'open' : ''}" data-day="${d.num}">
-          <div class="day-header">
-            <div class="day-num">${d.num}<small>Day</small></div>
-            <div class="day-title-block">
-              <div class="day-date">${d.date}</div>
-              <div class="day-title">${d.title}</div>
-            </div>
-            <div class="day-progress">
-              <div class="progress-ring">
-                <svg viewBox="0 0 36 36">
-                  <circle class="bg" cx="18" cy="18" r="15"/>
-                  <circle class="fg" cx="18" cy="18" r="15"
-                          stroke-dasharray="${circ}"
-                          stroke-dashoffset="${offset}"/>
-                </svg>
-                <div class="progress-count">${done}/${total}</div>
-              </div>
-              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9"/>
-              </svg>
-            </div>
-          </div>
-          <div class="day-body">
-            <div class="day-inner">
-              <div class="day-story">${d.story}</div>
-              <div class="schedule">${itemsHtml}</div>
-            </div>
-          </div>
-        </div>`;
-    }).join("");
-
-    // Bind day toggle
-    root.querySelectorAll(".day-header").forEach(h => {
-      h.addEventListener("click", () => {
-        h.parentElement.classList.toggle("open");
-      });
-    });
-
-    // Bind item checks
-    root.querySelectorAll(".item").forEach(item => {
-      item.addEventListener("click", async () => {
-        const key = item.dataset.key;
-        checked[key] = !checked[key];
-        item.classList.toggle("done", checked[key]);
-        await saveKey("checked", JSON.stringify(checked));
-        updateProgressForKey(key);
-        // Also update timeline view counter
-        updateTimelineCounter(parseInt(key.split("_")[0].slice(1)));
-      });
-    });
-  }
-
-  function updateTimelineCounter(dayNum) {
-    const day = itinerary.find(d => d.num === dayNum);
-    if (!day) return;
-    const total = day.items.length;
-    const done = day.items.filter((_, i) => checked[`d${dayNum}_i${i}`]).length;
-    const btn = document.querySelector(`#timeline-view .tl-expand[data-jump="${dayNum}"]`);
-    if (btn) btn.textContent = `View ${total} activities · ${done}/${total} done`;
-  }
-
-  function switchView(view) {
-    document.getElementById("timeline-view").classList.toggle("active", view === "timeline");
-    document.getElementById("detail-view").classList.toggle("active", view === "detail");
-    document.querySelectorAll(".view-toggle button").forEach(b => {
-      b.classList.toggle("active", b.dataset.view === view);
-    });
-  }
-
-  function renderDays() {
-    renderTimeline();
-    renderDetail();
-    document.querySelectorAll(".view-toggle button").forEach(b => {
-      b.addEventListener("click", () => switchView(b.dataset.view));
-    });
-  }
-
-  function updateProgressForKey(key) {
-    // key is "dN_iM"
-    const dayNum = parseInt(key.split("_")[0].slice(1));
-    const day = itinerary.find(d => d.num === dayNum);
-    if (!day) return;
-    const total = day.items.length;
-    const done = day.items.filter((_, i) => checked[`d${dayNum}_i${i}`]).length;
-    const pct = total ? done / total : 0;
-    const circ = 2 * Math.PI * 15;
-    const offset = circ * (1 - pct);
-
-    const dayEl = document.querySelector(`#detail-view .day[data-day="${dayNum}"]`);
-    if (!dayEl) return;
-    const fg = dayEl.querySelector(".progress-ring .fg");
-    const counter = dayEl.querySelector(".progress-count");
-    if (fg) fg.setAttribute("stroke-dashoffset", offset);
-    if (counter) counter.textContent = `${done}/${total}`;
   }
 
   function bindNotes() {
@@ -1928,316 +2276,90 @@
     });
   }
 
-  function bindReset() {
-    document.getElementById("reset-btn").addEventListener("click", async () => {
-      if (!confirm("Clear all check-marks? (Your notes will be kept.)")) return;
-      for (const k of Object.keys(checked)) delete checked[k];
-      await deleteKey("checked");
-      renderDays();
-    });
-  }
 
-  // ============ MEAL PLAN ============
-  const mealPlan = [
-    { day: 1, date: "Sat 7/10", b: { t: "On the road", n: "Eat before arrival", out: true },
-      l: { t: "Sandwiches en route", n: "Florida crew on the drive", out: true },
-      d: { t: "Grill night at home", n: "Burgers, dogs, watermelon, chips, slaw" } },
-    { day: 2, date: "Sun 7/11", b: { t: "Pancakes & bacon", n: "Berries, OJ, coffee" },
-      l: { t: "RC Otter's", n: "Bike to the village", out: true },
-      d: { t: "The Mucky Duck", n: "Sunset, no reservations", out: true } },
-    { day: 3, date: "Mon 7/12", b: { t: "Yogurt bar & bagels", n: "Granola, fruit, cream cheese" },
-      l: { t: "Cabbage Key Inn", n: "Cheeseburger in paradise", out: true },
-      d: { t: "Pizza at home", n: "Frozen or order in, salad, fruit" } },
-    { day: 4, date: "Tue 7/13", b: { t: "Egg sandwiches", n: "English muffins, eggs, cheese" },
-      l: { t: "Keylime Bistro", n: "Walk from house after kayak", out: true },
-      d: { t: "Cookout — burger night", n: "Doug on the grill, corn, salad" } },
-    { day: 5, date: "Wed 7/14", b: { t: "Anniversary breakfast", n: "Mimosas, pancakes, bacon, berries", special: true },
-      l: { t: "Light lunch at home", n: "Sandwiches, chips, fruit" },
-      d: { t: "Crow's Nest Steakhouse", n: "The big anniversary dinner", out: true, special: true } },
-    { day: 6, date: "Thu 7/15", b: { t: "Bagels & fruit", n: "Quick — boat day" },
-      l: { t: "Cayo Costa picnic", n: "PB&J, wraps, fruit, lots of water", special: true },
-      d: { t: "The Bubble Room", n: "Iconic dinner out", out: true } },
-    { day: 7, date: "Fri 7/16", b: { t: "Big breakfast", n: "Use up eggs, bacon, pancake mix" },
-      l: { t: "The Green Flash", n: "Waterfront lunch", out: true },
-      d: { t: "Clean-out-the-fridge", n: "Leftovers, pasta with what's left" } },
-    { day: 8, date: "Sat 7/17", b: { t: "Last coffee & toast", n: "Whatever's left" },
-      l: { t: "On the road", n: "Drive home", out: true },
-      d: { t: "—", n: "Home by dinner", out: true } }
-  ];
+  // ============ VACATION VOTE ============
+  (function() {
+    var VOTE_KEY = 'mehr_vacation_family_votes';
+    var VOTER_KEY = 'mehr_vacation_voter';
 
-  function renderMealPlan() {
-    const root = document.getElementById("meal-plan");
-    let html = `
-      <div class="meal-cell header"></div>
-      <div class="meal-cell header">Breakfast</div>
-      <div class="meal-cell header">Lunch</div>
-      <div class="meal-cell header">Dinner</div>
-    `;
-    for (const row of mealPlan) {
-      html += `<div class="meal-cell day">${row.date}<span class="meal-day-num">Day ${row.day}</span></div>`;
-      for (const meal of [row.b, row.l, row.d]) {
-        const classes = ["meal-cell"];
-        if (meal.out) classes.push("out");
-        if (meal.special) classes.push("special");
-        html += `<div class="${classes.join(' ')}">
-          <div class="meal-cell-title">${meal.t}</div>
-          <div class="meal-cell-note">${meal.n}</div>
-        </div>`;
+    var VOTERS = ['doug-deb', 'brent', 'kate', 'declan', 'anne', 'nick', 'cullen', 'keely', 'finley', 'jake', 'sarah'];
+    var VOTER_LABELS = {
+      'doug-deb': 'Doug & Deb', 'brent': 'Brent', 'kate': 'Kate', 'declan': 'Declan',
+      'anne': 'Anne', 'nick': 'Nick', 'cullen': 'Cullen', 'keely': 'Keely',
+      'finley': 'Finley', 'jake': 'Jake', 'sarah': 'Sarah'
+    };
+
+    var votes = { 'doug-deb': null, 'brent': null, 'kate': null, 'declan': null, 'anne': null, 'nick': null, 'cullen': null, 'keely': null, 'finley': null, 'jake': null, 'sarah': null };
+    var currentVoter = null;
+
+    try {
+      var saved = localStorage.getItem(VOTE_KEY);
+      if (saved) { var parsed = JSON.parse(saved); Object.assign(votes, parsed); }
+      currentVoter = localStorage.getItem(VOTER_KEY) || null;
+    } catch(e) {}
+
+    function saveVotes() {
+      try { localStorage.setItem(VOTE_KEY, JSON.stringify(votes)); } catch(e) {}
+    }
+
+    function updateVoteDisplay() {
+      // Highlight selected voter button
+      VOTERS.forEach(function(v) {
+        var btn = document.querySelector('.voter-btn[data-voter="' + v + '"]');
+        if (btn) btn.classList.toggle('active-voter', v === currentVoter);
+      });
+
+      // Show/hide cast area
+      var castArea = document.getElementById('cast-vote-area');
+      if (castArea) castArea.style.display = currentVoter ? 'block' : 'none';
+
+      // Highlight the selected option for current voter
+      if (currentVoter) {
+        var myVote = votes[currentVoter];
+        [1, 2].forEach(function(opt) {
+          var btn = document.querySelector('.cast-btn[data-option="' + opt + '"]');
+          if (btn) btn.classList.toggle('voted', String(myVote) === String(opt));
+        });
       }
-    }
-    root.innerHTML = html;
-  }
 
-  // ============ SHOPPING LIST ============
-  const shoppingList = [
-    {
-      cat: "Produce",
-      icon: "🥬",
-      tip: "Buy at Publix on the way down — Captiva produce is limited.",
-      items: [
-        "Bananas — 2 bunches",
-        "Berries (strawberries, blueberries) — 4 containers",
-        "Watermelon — 1 large",
-        "Cantaloupe or pineapple — 1",
-        "Apples — bag of 8-10",
-        "Grapes — 2 bags",
-        "Oranges — 6 (for juice & snacking)",
-        "Lemons — 4 (for water, cooking)",
-        "Limes — 4 (for drinks)",
-        "Avocados — 4",
-        "Tomatoes — 6 large (burgers, salads)",
-        "Romaine + bagged salad mix — 2 bags",
-        "Cucumbers — 3",
-        "Bell peppers — 4",
-        "Red onion — 2",
-        "Yellow onion — 3",
-        "Garlic — 1 head",
-        "Fresh herbs (basil, cilantro)",
-        "Corn on the cob — 12 ears (cookout)",
-        "Potatoes for grilling — 5 lb bag",
-        "Baby carrots — 2 bags (snacks)",
-        "Celery — 1 bunch"
-      ]
-    },
-    {
-      cat: "Proteins",
-      icon: "🥩",
-      tip: "Doug's burger duty Tuesday. Buy ground beef fresh near the start of the week.",
-      items: [
-        "Ground beef (80/20) — 4 lb (Sat + Tue burgers)",
-        "Hot dogs / brats — 2 packs",
-        "Chicken breasts — 3 lb (Wed light lunch, backup dinner)",
-        "Bacon — 2 lb (multiple breakfasts)",
-        "Eggs — 3 dozen",
-        "Deli ham + turkey — 1 lb each (sandwiches)",
-        "Sliced cheese — provolone, american (1 lb total)",
-        "Block cheddar — 1 large",
-        "Shrimp (frozen) — 2 lb bag (optional for Friday cleanup)"
-      ]
-    },
-    {
-      cat: "Bread & Carbs",
-      icon: "🍞",
-      tip: "Bagels and English muffins are breakfast workhorses.",
-      items: [
-        "Hamburger buns — 16 (Sat + Tue)",
-        "Hot dog buns — 8",
-        "Bagels — 12 (variety)",
-        "English muffins — 12",
-        "Sandwich bread — 2 loaves (Cayo Costa picnic + lunches)",
-        "Tortillas — 1 pack (wraps, quesadillas)",
-        "Pancake mix — 1 large box",
-        "Maple syrup — 1 bottle",
-        "Pasta — 2 boxes (Friday cleanup night)",
-        "Frozen pizzas — 4 (Monday dinner)",
-        "Cereal — 2 boxes (kid favorites)",
-        "Granola — 1 bag",
-        "Tortilla chips — 2 large bags",
-        "Pretzels — 1 bag",
-        "Crackers — 1 box"
-      ]
-    },
-    {
-      cat: "Dairy & Cold",
-      icon: "🥛",
-      tip: "Cream cheese for the bagel bar, lots of yogurt for kid snacks.",
-      items: [
-        "Milk — 2 gallons (kids drink it fast)",
-        "Half & half — 1 quart (coffee)",
-        "Butter — 1 lb",
-        "Cream cheese — 2 tubs (plain + flavored)",
-        "Greek yogurt — 6 individual + 1 large tub",
-        "Sour cream — 1 small",
-        "Orange juice — 1 gallon",
-        "Lemonade — 2 large",
-        "Hummus — 2 tubs"
-      ]
-    },
-    {
-      cat: "Pantry & Condiments",
-      icon: "🧂",
-      tip: "Quick scan — bring small bottles, the house may have basics.",
-      items: [
-        "Ketchup",
-        "Mustard (yellow + dijon)",
-        "Mayo",
-        "BBQ sauce",
-        "Hot sauce",
-        "Pickles — 1 jar",
-        "Olive oil — small bottle",
-        "Salt + pepper",
-        "Garlic powder, paprika, taco seasoning",
-        "Peanut butter — 1 jar (Cayo Costa PB&J)",
-        "Jelly — 1 jar",
-        "Honey",
-        "Coffee — 2 lb (whole bean or ground)",
-        "Tea bags — 1 box",
-        "Sugar — small bag",
-        "Pasta sauce — 2 jars (Friday)"
-      ]
-    },
-    {
-      cat: "Snacks & Treats",
-      icon: "🍪",
-      tip: "Four cousins, July heat, all day at the beach. Plan generous.",
-      items: [
-        "Goldfish or Cheez-Its — 2 boxes",
-        "Granola bars — 2 boxes",
-        "Trail mix — 1 large bag",
-        "Popcorn — 1 box (movie night)",
-        "Cookies — 2 packs",
-        "Ice cream — 2 half-gallons",
-        "Popsicles — 2 boxes (essential)",
-        "S'mores kit (graham, marshmallow, chocolate)",
-        "Birthday/anniversary cake — pre-order from Publix bakery",
-        "Sparklers + sparkling cider for Wed toast"
-      ]
-    },
-    {
-      cat: "Drinks",
-      icon: "🍷",
-      tip: "Bottled water > tap on the island. Heat is no joke in July.",
-      items: [
-        "Bottled water — 2 cases (24-pack each)",
-        "Sparkling water — 12-pack (Deb's favorite)",
-        "Gatorade / electrolytes — 12-pack",
-        "Sodas — 12-pack variety (Coke, Sprite, etc.)",
-        "Capri Sun / juice boxes — for cousins",
-        "Beer — case of choice (Brent's IPA, Cullen's pick)",
-        "Wine — 4 bottles (rosé, white, two reds)",
-        "Champagne / Prosecco — 2 bottles for Wed toast",
-        "Mimosa supplies (OJ already on list)",
-        "Limes for cocktails (already on produce list)"
-      ]
-    },
-    {
-      cat: "Beach & House",
-      icon: "🏖",
-      tip: "Things you'll forget that aren't really food but you'll need.",
-      items: [
-        "Reef-safe sunscreen — 3+ bottles",
-        "Aloe / after-sun gel",
-        "Bug spray",
-        "Ice (bag from Publix for the cooler)",
-        "Ziploc bags — sandwich + gallon (for shells & wet stuff)",
-        "Paper towels — 2 rolls",
-        "Trash bags — kitchen + tall",
-        "Aluminum foil",
-        "Disposable cups for the beach toast",
-        "Sharpie + masking tape (for the dollar bills at Cabbage Key)",
-        "Cash for tipping boat captains, photographer"
-      ]
-    }
-  ];
-
-  const shopChecked = {};
-
-  function renderShoppingList() {
-    const root = document.getElementById("shopping-list");
-    root.innerHTML = shoppingList.map((cat, ci) => {
-      const itemsHtml = cat.items.map((item, i) => {
-        const key = `s${ci}_${i}`;
-        const isBought = !!shopChecked[key];
-        return `
-          <div class="shop-item ${isBought ? 'bought' : ''}" data-key="${key}">
-            <div class="shop-check">
-              <svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg>
-            </div>
-            <div class="shop-item-text">${item}</div>
-          </div>`;
-      }).join("");
-
-      const total = cat.items.length;
-      const done = cat.items.filter((_, i) => shopChecked[`s${ci}_${i}`]).length;
-
-      return `
-        <div class="shop-cat" data-cat="${ci}">
-          <div class="shop-cat-header">
-            <div class="shop-cat-name">
-              <span class="shop-cat-icon">${cat.icon}</span>
-              <span>${cat.cat}</span>
-            </div>
-            <div class="shop-cat-count" data-count="${ci}">${done}/${total}</div>
-          </div>
-          <div class="shop-items">${itemsHtml}</div>
-          ${cat.tip ? `<div class="shop-tip">${cat.tip}</div>` : ""}
-        </div>`;
-    }).join("");
-
-    // Bind item clicks
-    root.querySelectorAll(".shop-item").forEach(item => {
-      item.addEventListener("click", async () => {
-        const key = item.dataset.key;
-        shopChecked[key] = !shopChecked[key];
-        item.classList.toggle("bought", shopChecked[key]);
-        await saveKey("shopping", JSON.stringify(shopChecked));
-        updateShopCounts();
+      // Update tally rows
+      VOTERS.forEach(function(v) {
+        var pickEl = document.getElementById('pick-' + v);
+        var rowEl = document.getElementById('tally-' + v);
+        if (pickEl) {
+          var myVote = votes[v];
+          if (!myVote) {
+            pickEl.textContent = 'not voted yet';
+            pickEl.className = 'tally-pick tally-none';
+          } else if (myVote === '1') {
+            pickEl.textContent = '✓ Seas the Day';
+            pickEl.className = 'tally-pick tally-opt1';
+          } else {
+            pickEl.textContent = "✓ Life's a Beach";
+            pickEl.className = 'tally-pick tally-opt2';
+          }
+        }
+        if (rowEl) rowEl.classList.toggle('active-row', v === currentVoter);
       });
-    });
-
-    updateShopCounts();
-  }
-
-  function updateShopCounts() {
-    let total = 0, done = 0;
-    shoppingList.forEach((cat, ci) => {
-      const cTotal = cat.items.length;
-      const cDone = cat.items.filter((_, i) => shopChecked[`s${ci}_${i}`]).length;
-      total += cTotal; done += cDone;
-      const counter = document.querySelector(`[data-count="${ci}"]`);
-      if (counter) counter.textContent = `${cDone}/${cTotal}`;
-    });
-    const progEl = document.getElementById("shop-progress");
-    if (progEl) {
-      const pct = total ? Math.round((done / total) * 100) : 0;
-      progEl.innerHTML = `<strong>${done}</strong> of ${total} items checked off · ${pct}% packed`;
     }
-  }
 
-  function bindShopActions() {
-    document.getElementById("shop-copy").addEventListener("click", () => {
-      const text = shoppingList.map(cat => {
-        const lines = cat.items.map(i => `  ☐ ${i}`).join("\n");
-        return `${cat.cat.toUpperCase()}\n${lines}`;
-      }).join("\n\n");
-      const fullText = `MEHR FAMILY CAPTIVA SHOPPING LIST\nJuly 10-17, 2027 · Feeds 9\n\n${text}`;
-      navigator.clipboard.writeText(fullText).then(() => {
-        const btn = document.getElementById("shop-copy");
-        const orig = btn.textContent;
-        btn.textContent = "Copied ✓";
-        setTimeout(() => { btn.textContent = orig; }, 1500);
-      }).catch(() => {
-        alert("Couldn't copy automatically — the list is still visible above.");
-      });
-    });
+    window.selectVoter = function(voter) {
+      currentVoter = voter;
+      try { localStorage.setItem(VOTER_KEY, voter); } catch(e) {}
+      updateVoteDisplay();
+    };
 
-    document.getElementById("shop-clear").addEventListener("click", async () => {
-      if (!confirm("Clear all shopping checks?")) return;
-      for (const k of Object.keys(shopChecked)) delete shopChecked[k];
-      await deleteKey("shopping");
-      renderShoppingList();
-    });
-  }
+    window.castVote = function(opt) {
+      if (!currentVoter) return;
+      var optStr = String(opt);
+      votes[currentVoter] = (votes[currentVoter] === optStr) ? null : optStr;
+      saveVotes();
+      updateVoteDisplay();
+    };
+
+    updateVoteDisplay();
+  })();
+
 
   init();
 </script>
